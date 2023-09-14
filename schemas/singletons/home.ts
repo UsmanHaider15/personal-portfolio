@@ -10,9 +10,9 @@ export default defineType({
   // liveEdit: true,
   fields: [
     defineField({
-      name: 'title',
-      description: 'This field is the title of your personal website.',
-      title: 'Title',
+      name: 'name',
+      description: 'This field is your full name.',
+      title: 'Name',
       type: 'string',
       validation: (rule) => rule.required(),
     }),
@@ -25,52 +25,17 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'name',
-      description: 'This field is your full name.',
-      title: 'Name',
+      name: 'tagLine',
+      description: 'This field is the your Tag Line.',
+      title: 'Tag Line',
       type: 'string',
       validation: (rule) => rule.required(),
-    }),
-    defineField({
-      name: 'jobTitle',
-      description: 'This field is the your Job Title.',
-      title: 'Job title',
-      type: 'string',
-      validation: (rule) => rule.required(),
-    }),
-    // add fields for social links
-    defineField({
-      name: 'socialLinks',
-      description: 'These are the links to your social media profiles.',
-      title: 'Social links',
-      type: 'array',
-      of: [
-        defineArrayMember({
-          type: 'object',
-          fields: [
-            defineField({
-              name: 'title',
-              description: 'This field is the title of the social link.',
-              title: 'Title',
-              type: 'string',
-              validation: (rule) => rule.required(),
-            }),
-            defineField({
-              name: 'url',
-              description: 'This field is the url of the social link.',
-              title: 'Url',
-              type: 'url',
-              validation: (rule) => rule.required(),
-            }),
-          ],
-        }),
-      ],
     }),
     defineField({
       name: 'overview',
       description:
-        'Used both for the <meta> description tag for SEO, and the personal website subheader.',
-      title: 'Description',
+        'Used both for the <meta> description tag for SEO, and the About section.',
+      title: 'About',
       type: 'array',
       of: [
         // Paragraphs
@@ -108,256 +73,84 @@ export default defineType({
       ],
       validation: (rule) => rule.max(155).required(),
     }),
-    // add field for work experience, enddata would be current for current job
+    // add fields for social links
     defineField({
-      name: 'workExperience',
-      description: 'This is your work experience.',
-      title: 'Work experience',
+      name: 'socialLinks',
+      description: 'These are the links to your social media profiles.',
+      title: 'Social links',
       type: 'array',
       of: [
         defineArrayMember({
           type: 'object',
           fields: [
             defineField({
-              name: 'company',
-              description: 'This field is the company name.',
-              title: 'Company',
+              name: 'key',
+              description: 'This field is the key of the social link.',
+              title: 'Key',
               type: 'string',
               validation: (rule) => rule.required(),
             }),
             defineField({
-              name: 'jobTitle',
-              description: 'This field is the job title.',
-              title: 'Job title',
-              type: 'string',
-              validation: (rule) => rule.required(),
-            }),
-            defineField({
-              name: 'startDate',
-              description: 'This field is the start date.',
-              title: 'Start date',
-              type: 'date',
-              validation: (rule) => rule.required(),
-            }),
-            defineField({
-              name: 'endDate',
-              description:
-                'This field is the end date. Leave blank if current job.',
-              title: 'End date',
-              type: 'date',
-            }),
-            defineField({
-              name: 'description',
-              description: 'This field is the job description.',
-              title: 'Description',
-              type: 'array',
-              of: [
-                // Paragraphs
-                defineArrayMember({
-                  lists: [],
-                  marks: {
-                    annotations: [
-                      {
-                        name: 'link',
-                        type: 'object',
-                        title: 'Link',
-                        fields: [
-                          {
-                            name: 'href',
-                            type: 'url',
-                            title: 'Url',
-                          },
-                        ],
-                      },
-                    ],
-                    decorators: [
-                      {
-                        title: 'Italic',
-                        value: 'em',
-                      },
-                      {
-                        title: 'Strong',
-                        value: 'strong',
-                      },
-                    ],
-                  },
-                  styles: [],
-                  type: 'block',
-                }),
-              ],
+              name: 'url',
+              description: 'This field is the url of the social link.',
+              title: 'Url',
+              type: 'url',
               validation: (rule) => rule.required(),
             }),
           ],
         }),
       ],
     }),
-    // add field for education
+    // add field for contact me button which have a title and a url
     defineField({
-      name: 'education',
-      description: 'This is your education.',
-      title: 'Education',
-      type: 'array',
-      of: [
-        defineArrayMember({
-          type: 'object',
-          fields: [
-            defineField({
-              name: 'school',
-              description: 'This field is the school name.',
-              title: 'School',
-              type: 'string',
-              validation: (rule) => rule.required(),
-            }),
-            defineField({
-              name: 'degree',
-              description: 'This field is the degree.',
-              title: 'Degree',
-              type: 'string',
-              validation: (rule) => rule.required(),
-            }),
-            defineField({
-              name: 'startDate',
-              description: 'This field is the start date.',
-              title: 'Start date',
-              type: 'date',
-              validation: (rule) => rule.required(),
-            }),
-            defineField({
-              name: 'endDate',
-              description:
-                'This field is the end date. Leave blank if current education.',
-              title: 'End date',
-              type: 'date',
-            }),
-            defineField({
-              name: 'description',
-              description: 'This field is the education description.',
-              title: 'Description',
-              type: 'array',
-              of: [
-                // Paragraphs
-                defineArrayMember({
-                  lists: [],
-                  marks: {
-                    annotations: [
-                      {
-                        name: 'link',
-                        type: 'object',
-                        title: 'Link',
-                        fields: [
-                          {
-                            name: 'href',
-                            type: 'url',
-                            title: 'Url',
-                          },
-                        ],
-                      },
-                    ],
-                    decorators: [
-                      {
-                        title: 'Italic',
-                        value: 'em',
-                      },
-                      {
-                        title: 'Strong',
-                        value: 'strong',
-                      },
-                    ],
-                  },
-                  styles: [],
-                  type: 'block',
-                }),
-              ],
-              validation: (rule) => rule.required(),
-            }),
-          ],
+      name: 'contactMeButton',
+      description: 'This is the contact me button.',
+      title: 'Contact me button',
+      type: 'object',
+      fields: [
+        defineField({
+          name: 'title',
+          description: 'This field is the title of the button.',
+          title: 'Title',
+          type: 'string',
+          validation: (rule) => rule.required(),
+        }),
+        defineField({
+          name: 'email',
+          description: 'This field is the email of the button.',
+          title: 'Email',
+          type: 'string',
+          validation: (rule) => rule.required(),
         }),
       ],
     }),
-    // add field for services
     defineField({
       name: 'services',
-      description: 'These are the services you offer.',
-      title: 'Services',
+      title: 'Here Are Some of My Skills',
+      description: 'List of services you offer along with the sub-services.',
       type: 'array',
       of: [
         defineArrayMember({
           type: 'object',
+          title: 'Service',
           fields: [
             defineField({
-              name: 'title',
-              description: 'This field is the title of the service.',
-              title: 'Title',
+              name: 'serviceName',
+              title: 'Service Name',
+              description: 'The name of the service, e.g., Graphic Design.',
               type: 'string',
               validation: (rule) => rule.required(),
             }),
             defineField({
-              name: 'description',
-              description: 'This field is the service description.',
-              title: 'Description',
+              name: 'subServices',
+              title: 'Sub-Services',
+              description: 'List of sub-services under this service.',
               type: 'array',
               of: [
-                // Paragraphs
                 defineArrayMember({
-                  lists: [],
-                  marks: {
-                    annotations: [
-                      {
-                        name: 'link',
-                        type: 'object',
-                        title: 'Link',
-                        fields: [
-                          {
-                            name: 'href',
-                            type: 'url',
-                            title: 'Url',
-                          },
-                        ],
-                      },
-                    ],
-                    decorators: [
-                      {
-                        title: 'Italic',
-                        value: 'em',
-                      },
-                      {
-                        title: 'Strong',
-                        value: 'strong',
-                      },
-                    ],
-                  },
-                  styles: [],
-                  type: 'block',
+                  type: 'string',
                 }),
               ],
-              validation: (rule) => rule.required(),
-            }),
-          ],
-        }),
-      ],
-    }),
-    // add field skills, skills fiels has a title and a percentage
-    defineField({
-      name: 'skills',
-      description: 'These are your skills.',
-      title: 'Skills',
-      type: 'array',
-      of: [
-        defineArrayMember({
-          type: 'object',
-          fields: [
-            defineField({
-              name: 'title',
-              description: 'This field is the title of the skill.',
-              title: 'Title',
-              type: 'string',
-              validation: (rule) => rule.required(),
-            }),
-            defineField({
-              name: 'percentage',
-              description: 'This field is the skill percentage.',
-              title: 'Percentage',
-              type: 'number',
               validation: (rule) => rule.required(),
             }),
           ],
@@ -374,6 +167,19 @@ export default defineType({
         defineArrayMember({
           type: 'reference',
           to: [{ type: 'project' }],
+        }),
+      ],
+    }),
+    defineField({
+      name: 'blogPosts',
+      title: 'Blog posts',
+      description:
+        'These are the blog that will appear first on your landing page.',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'reference',
+          to: [{ type: 'blog' }],
         }),
       ],
     }),

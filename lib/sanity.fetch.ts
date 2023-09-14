@@ -3,6 +3,8 @@ import 'server-only'
 import type { QueryParams } from '@sanity/client'
 import { client } from 'lib/sanity.client'
 import {
+  blogBySlugQuery,
+  blogPaths,
   homePageQuery,
   homePageTitleQuery,
   pagePaths,
@@ -16,6 +18,7 @@ import type {
   HomePagePayload,
   PagePayload,
   ProjectPayload,
+  BlogPayload,
   SettingsPayload,
 } from 'types'
 
@@ -85,6 +88,14 @@ export function getProjectBySlug(slug: string) {
   })
 }
 
+export function getBlogBySlug(slug: string) {
+  return sanityFetch<BlogPayload | null>({
+    query: blogBySlugQuery,
+    params: { slug },
+    tags: [`blog:${slug}`],
+  })
+}
+
 export function getHomePage() {
   return sanityFetch<HomePagePayload | null>({
     query: homePageQuery,
@@ -106,6 +117,14 @@ export function getPagesPaths() {
     { token, perspective: 'published' },
   )
 }
+export function getBlogsPaths() {
+  return client.fetch<string[]>(
+    blogPaths,
+    {},
+    { token, perspective: 'published' },
+  )
+}
+
 export function getProjectsPaths() {
   return client.fetch<string[]>(
     projectPaths,

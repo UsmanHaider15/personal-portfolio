@@ -27,12 +27,20 @@ export interface ShowcaseProject {
   title?: string
 }
 
+export interface BlogPosts {
+  _type: string
+  mainImage?: Image
+  overview?: PortableTextBlock[]
+  slug?: string
+  title?: string
+}
 // Page payloads
 
 export interface HomePagePayload {
   footer?: PortableTextBlock[]
   overview?: PortableTextBlock[]
   showcaseProjects?: ShowcaseProject[]
+  blogPosts?: BlogPosts[]
   title?: string
 }
 
@@ -57,6 +65,17 @@ export interface ProjectPayload {
   slug: string
   tags?: string[]
   title?: string
+}
+
+export interface BlogPayload {
+  title: string
+  slug: string
+  overview?: PortableTextBlock[]
+  author?: string
+  publishedAt?: string
+  mainImage?: Image
+  categories?: string[]
+  body?: PortableTextBlock[]
 }
 
 export interface SettingsPayload {

@@ -12,6 +12,13 @@ export const homePageQuery = groq`
       tags,
       title,
     },
+    blogPosts[]->{
+      _type,
+      mainImage,
+      overview,
+      "slug": slug.current,
+      title,
+    },
     title,
   }
 `
@@ -45,8 +52,26 @@ export const projectBySlugQuery = groq`
   }
 `
 
+export const blogBySlugQuery = groq`
+  *[_type == "blog" && slug.current == $slug][0] {
+    _id,
+    title,
+    "slug": slug.current,
+    overview,
+    author,
+    publishedAt,
+    mainImage,
+    categories,
+    body
+  }
+`
+
 export const projectPaths = groq`
   *[_type == "project" && slug.current != null].slug.current
+`
+
+export const blogPaths = groq`
+  *[_type == "blog" && slug.current != null].slug.current
 `
 
 export const pagePaths = groq`
