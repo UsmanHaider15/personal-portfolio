@@ -32,6 +32,13 @@ export default defineType({
         },
       ],
     }),
+    // add email field for contact form
+    defineField({
+      name: 'email',
+      title: 'Email',
+      type: 'string',
+      description: 'Email address for contact form.',
+    }),
     defineField({
       name: 'footer',
       description:
