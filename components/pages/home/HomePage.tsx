@@ -41,7 +41,7 @@ export function HomePage({ data }: HomePageProps) {
       {/* {title && <Header centered title={title} description={overview} />} */}
       {/* Showcase projects */}
       {showcaseProjects && showcaseProjects.length > 0 && (
-        <div className="mx-auto max-w-[100rem] rounded-md border">
+        <div className="mx-auto max-w-[100rem]">
           {showcaseProjects.map((project, key) => {
             const href = resolveHref(project._type, project.slug)
             if (!href) {
@@ -49,7 +49,7 @@ export function HomePage({ data }: HomePageProps) {
             }
             return (
               <Link key={key} href={href}>
-                <ProjectListItem project={project} odd={key % 2} />
+                <ProjectListItem project={project} />
               </Link>
             )
           })}
@@ -64,7 +64,7 @@ export function HomePage({ data }: HomePageProps) {
             }
             return (
               <Link key={key} href={href}>
-                <BlogListItem blog={blog} odd={key % 2} />
+                <BlogListItem blog={blog} />
               </Link>
             )
           })}

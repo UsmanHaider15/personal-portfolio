@@ -5,26 +5,21 @@ import type { ShowcaseProject } from 'types'
 
 interface ProjectProps {
   project: ShowcaseProject
-  odd: number
 }
 
 export function ProjectListItem(props: ProjectProps) {
-  const { project, odd } = props
+  const { project } = props
 
   return (
-    <div
-      className={`flex flex-col gap-x-5 p-2 transition hover:bg-gray-50/50 xl:flex-row ${
-        odd && 'border-b border-t xl:flex-row-reverse'
-      }`}
-    >
-      <div className="w-full xl:w-9/12">
+    <div className={`flex flex-col transition hover:bg-gray-50/50`}>
+      <div>
         <ImageBox
           image={project.coverImage}
           alt={`Cover image from ${project.title}`}
           classesWrapper="relative aspect-[16/9]"
         />
       </div>
-      <div className="flex xl:w-1/4">
+      <div>
         <TextBox project={project} />
       </div>
     </div>
@@ -40,18 +35,18 @@ function TextBox({ project }: { project: ShowcaseProject }) {
           {project.title}
         </div>
         {/* Overview  */}
-        <div className="font-serif text-gray-500">
+        <div className="mx-0 mt-0 mb-6 font-sans font-normal leading-7 text-zinc-500">
           <CustomPortableText value={project.overview as PortableTextBlock[]} />
         </div>
       </div>
       {/* Tags */}
-      <div className="mt-4 flex flex-row gap-x-2">
+      {/* <div className="mt-4 flex flex-row gap-x-2">
         {project.tags?.map((tag, key) => (
           <div className="text-sm font-medium lowercase md:text-lg" key={key}>
             #{tag}
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   )
 }

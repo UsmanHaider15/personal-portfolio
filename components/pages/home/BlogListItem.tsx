@@ -5,46 +5,43 @@ import type { BlogPosts } from 'types'
 
 interface BlogProps {
   blog: BlogPosts
-  odd: number
 }
 
 export function BlogListItem(props: BlogProps) {
-  const { blog, odd } = props
+  const { blog } = props
 
   return (
-    <div
-      className={`flex flex-col gap-x-5 p-2 transition hover:bg-gray-50/50 xl:flex-row ${
-        odd && 'border-b border-t xl:flex-row-reverse'
-      }`}
-    >
-      <div className="w-full xl:w-9/12">
+    <div className={`flex flex-col gap-x-5 p-2 transition hover:bg-gray-50/50`}>
+      <div className="w-full">
         <ImageBox
           image={blog.mainImage}
           alt={`Cover image from ${blog.title}`}
           classesWrapper="relative aspect-[16/9]"
         />
       </div>
-      <div className="flex xl:w-1/4">{/* <TextBox project={project} /> */}</div>
+      <div className="flex">
+        <BlogTextBox blog={blog} />
+      </div>
     </div>
   )
 }
 
-function TextBox({ project }: { project: BlogPosts }) {
+function BlogTextBox({ blog }: { blog: BlogPosts }) {
   return (
     <div className="relative mt-2 flex w-full flex-col justify-between p-3 xl:mt-0">
       <div>
         {/* Title */}
         <div className="mb-2 text-xl font-extrabold tracking-tight md:text-2xl">
-          {project.title}
+          {blog.title}
         </div>
         {/* Overview  */}
         <div className="font-serif text-gray-500">
-          <CustomPortableText value={project.overview as PortableTextBlock[]} />
+          <CustomPortableText value={blog.overview as PortableTextBlock[]} />
         </div>
       </div>
       {/* Tags */}
       <div className="mt-4 flex flex-row gap-x-2">
-        {/* {project.tags?.map((tag, key) => (
+        {/* {blog.tags?.map((tag, key) => (
           <div className="text-sm font-medium lowercase md:text-lg" key={key}>
             #{tag}
           </div>
