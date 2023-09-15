@@ -5,6 +5,7 @@ import Link from 'next/link'
 import type { HomePagePayload } from 'types'
 import { BlogListItem } from './BlogListItem'
 import Introduction from './Introduction'
+import ServicesSection from './Services'
 
 export interface HomePageProps {
   data: HomePagePayload | null
@@ -21,6 +22,7 @@ export function HomePage({ data }: HomePageProps) {
     tagLine = '',
     socialLinks = [],
     contactMeButton = null,
+    services = [],
   } = data ?? {}
 
   return (
@@ -33,6 +35,8 @@ export function HomePage({ data }: HomePageProps) {
         socialLinks={socialLinks}
         contactMeButton={contactMeButton}
       />
+
+      <ServicesSection services={services} />
       {/* Header */}
       {/* {title && <Header centered title={title} description={overview} />} */}
       {/* Showcase projects */}

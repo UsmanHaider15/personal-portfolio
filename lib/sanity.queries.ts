@@ -23,7 +23,8 @@ export const homePageQuery = groq`
     avatar,
     tagLine,
     socialLinks,
-    contactMeButton
+    contactMeButton,
+    services
   }
 `
 

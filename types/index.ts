@@ -46,6 +46,12 @@ export interface BlogPosts {
   title?: string
 }
 
+export interface Service {
+  serviceName: string
+  subServices: string[]
+  _key?: string
+}
+
 export interface HomePagePayload {
   footer?: PortableTextBlock[]
   overview?: PortableTextBlock[]
@@ -57,6 +63,7 @@ export interface HomePagePayload {
   tagLine?: string
   socialLinks?: SocialLinks[]
   contactMeButton?: ContactMeButton
+  services?: Service[]
 }
 
 export interface PagePayload {
