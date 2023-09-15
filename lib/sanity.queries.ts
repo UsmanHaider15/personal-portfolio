@@ -19,7 +19,11 @@ export const homePageQuery = groq`
       "slug": slug.current,
       title,
     },
-    title,
+    name,
+    avatar,
+    tagLine,
+    socialLinks,
+    contactMeButton
   }
 `
 

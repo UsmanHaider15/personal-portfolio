@@ -7,6 +7,17 @@ export interface MenuItem {
   title?: string
 }
 
+export interface SocialLinks {
+  key: string
+  url: string
+  _key: string
+}
+
+export interface ContactMeButton {
+  email: string
+  title: string
+}
+
 export interface MilestoneItem {
   description?: string
   duration?: {
@@ -34,7 +45,6 @@ export interface BlogPosts {
   slug?: string
   title?: string
 }
-// Page payloads
 
 export interface HomePagePayload {
   footer?: PortableTextBlock[]
@@ -42,6 +52,11 @@ export interface HomePagePayload {
   showcaseProjects?: ShowcaseProject[]
   blogPosts?: BlogPosts[]
   title?: string
+  name?: string
+  avatar?: Image
+  tagLine?: string
+  socialLinks?: SocialLinks[]
+  contactMeButton?: ContactMeButton
 }
 
 export interface PagePayload {

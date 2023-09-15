@@ -4,6 +4,7 @@ import { resolveHref } from 'lib/sanity.links'
 import Link from 'next/link'
 import type { HomePagePayload } from 'types'
 import { BlogListItem } from './BlogListItem'
+import Introduction from './Introduction'
 
 export interface HomePageProps {
   data: HomePagePayload | null
@@ -15,13 +16,25 @@ export function HomePage({ data }: HomePageProps) {
     overview = [],
     showcaseProjects = [],
     blogPosts = [],
-    title = '',
+    name = '',
+    avatar = null,
+    tagLine = '',
+    socialLinks = [],
+    contactMeButton = null,
   } = data ?? {}
 
   return (
     <div className="space-y-20">
+      <Introduction
+        name={name}
+        avatar={avatar}
+        tagLine={tagLine}
+        overview={overview}
+        socialLinks={socialLinks}
+        contactMeButton={contactMeButton}
+      />
       {/* Header */}
-      {title && <Header centered title={title} description={overview} />}
+      {/* {title && <Header centered title={title} description={overview} />} */}
       {/* Showcase projects */}
       {showcaseProjects && showcaseProjects.length > 0 && (
         <div className="mx-auto max-w-[100rem] rounded-md border">
