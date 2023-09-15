@@ -18,6 +18,7 @@ interface IntroductionProps {
   socialLinks: SocialLinks[]
   contactMeButton: ContactMeButton | null
 }
+
 const Introduction = ({
   name,
   avatar,

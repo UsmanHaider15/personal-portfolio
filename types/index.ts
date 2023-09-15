@@ -52,6 +52,11 @@ export interface Service {
   _key?: string
 }
 
+export interface Testimonial {
+  name: string
+  overview: PortableTextBlock[]
+}
+
 export interface HomePagePayload {
   footer?: PortableTextBlock[]
   overview?: PortableTextBlock[]
@@ -64,6 +69,7 @@ export interface HomePagePayload {
   socialLinks?: SocialLinks[]
   contactMeButton?: ContactMeButton
   services?: Service[]
+  testimonials?: Testimonial[]
 }
 
 export interface PagePayload {

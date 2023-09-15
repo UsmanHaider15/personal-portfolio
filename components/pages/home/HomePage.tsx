@@ -6,6 +6,7 @@ import type { HomePagePayload } from 'types'
 import { BlogListItem } from './BlogListItem'
 import Introduction from './Introduction'
 import ServicesSection from './Services'
+import Testimonial from './Testimonial'
 
 export interface HomePageProps {
   data: HomePagePayload | null
@@ -23,6 +24,7 @@ export function HomePage({ data }: HomePageProps) {
     socialLinks = [],
     contactMeButton = null,
     services = [],
+    testimonials = [],
   } = data ?? {}
 
   return (
@@ -40,7 +42,7 @@ export function HomePage({ data }: HomePageProps) {
       {/* Header */}
       {/* {title && <Header centered title={title} description={overview} />} */}
       {/* Showcase projects */}
-      {showcaseProjects && showcaseProjects.length > 0 && (
+      {/* {showcaseProjects && showcaseProjects.length > 0 && (
         <div className="mx-auto max-w-[100rem]">
           {showcaseProjects.map((project, key) => {
             const href = resolveHref(project._type, project.slug)
@@ -69,7 +71,9 @@ export function HomePage({ data }: HomePageProps) {
             )
           })}
         </div>
-      )}
+      )} */}
+
+      <Testimonial testimonials={testimonials} />
     </div>
   )
 }

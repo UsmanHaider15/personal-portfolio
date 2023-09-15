@@ -24,7 +24,8 @@ export const homePageQuery = groq`
     tagLine,
     socialLinks,
     contactMeButton,
-    services
+    services,
+    testimonials
   }
 `
 
