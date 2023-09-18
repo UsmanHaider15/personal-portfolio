@@ -43,7 +43,7 @@ export function HomePage({ data }: HomePageProps) {
       {/* Header */}
       {/* {title && <Header centered title={title} description={overview} />} */}
       {/* Showcase projects */}
-      {/* {showcaseProjects && showcaseProjects.length > 0 && (
+      {showcaseProjects && showcaseProjects.length > 0 && (
         <div className="mx-auto max-w-[100rem]">
           {showcaseProjects.map((project, key) => {
             const href = resolveHref(project._type, project.slug)
@@ -72,9 +72,8 @@ export function HomePage({ data }: HomePageProps) {
             )
           })}
         </div>
-      )} */}
+      )}
 
-      {/* <Testimonial testimonials={testimonials} /> */}
       <TestimonialCarousel testimonials={testimonials} />
     </div>
   )
