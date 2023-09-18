@@ -7,6 +7,7 @@ import { BlogListItem } from './BlogListItem'
 import Introduction from './Introduction'
 import ServicesSection from './Services'
 import Testimonial from './Testimonial'
+import TestimonialCarousel from './TestimonialCarousel'
 
 export interface HomePageProps {
   data: HomePagePayload | null
@@ -73,7 +74,8 @@ export function HomePage({ data }: HomePageProps) {
         </div>
       )} */}
 
-      <Testimonial testimonials={testimonials} />
+      {/* <Testimonial testimonials={testimonials} /> */}
+      <TestimonialCarousel testimonials={testimonials} />
     </div>
   )
 }
