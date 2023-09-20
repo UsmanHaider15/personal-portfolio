@@ -79,7 +79,7 @@ const Introduction = ({
             return (
               <a
                 href={link.url} // assuming link.url is the URL you want to navigate to
-                className="text-purple-400 bg-transparent cursor-pointer hover:text-purple-400 focus:text-cyan-800"
+                className="text-black-400 bg-transparent cursor-pointer hover:text-black-400 focus:text-cyan-800"
                 style={{
                   textDecoration: 'none',
                   transition: 'all 0.5s ease 0s',

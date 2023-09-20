@@ -11,7 +11,7 @@ export function ProjectListItem(props: ProjectProps) {
   const { project } = props
 
   return (
-    <div className={`flex flex-col transition hover:bg-gray-50/50`}>
+    <div>
       <div>
         <ImageBox
           image={project.coverImage}
@@ -20,24 +20,34 @@ export function ProjectListItem(props: ProjectProps) {
         />
       </div>
       <div>
-        <TextBox project={project} />
+        <ProjectTextBox project={project} />
       </div>
     </div>
   )
 }
 
-function TextBox({ project }: { project: ShowcaseProject }) {
+function ProjectTextBox({ project }: { project: ShowcaseProject }) {
   return (
-    <div className="relative mt-2 flex w-full flex-col justify-between p-3 xl:mt-0">
+    <div>
       <div>
         {/* Title */}
         <div className="mb-2 text-xl font-extrabold tracking-tight md:text-2xl">
           {project.title}
         </div>
         {/* Overview  */}
-        <div className="mx-0 mt-0 mb-6 font-sans font-normal leading-7 text-zinc-500">
+        <p className="mx-0 mt-0 mb-6 font-sans font-normal leading-7 text-gray-700">
           <CustomPortableText value={project.overview as PortableTextBlock[]} />
-        </div>
+        </p>
+      </div>
+      <div>
+        <p className="mx-0 mt-0 mb-6 font-sans font-normal leading-7 text-right text-zinc-500">
+          <a
+            href="#"
+            className="w-10 h-px text-xs leading-5 text-black uppercase cursor-pointer hover:text-purple-400 focus:text-cyan-800"
+          >
+            View details
+          </a>
+        </p>
       </div>
       {/* Tags */}
       {/* <div className="mt-4 flex flex-row gap-x-2">
