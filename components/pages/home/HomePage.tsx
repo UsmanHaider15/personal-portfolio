@@ -1,12 +1,7 @@
-import { ProjectListItem } from 'components/pages/home/ProjectListItem'
-import { Header } from 'components/shared/Header'
-import { resolveHref } from 'lib/sanity.links'
-import Link from 'next/link'
 import type { HomePagePayload } from 'types'
-import { BlogListItem } from './BlogListItem'
 import Introduction from './Introduction'
 import ServicesSection from './Services'
-import Testimonial from './Testimonial'
+// import Testimonial from './Testimonial'
 import TestimonialCarousel from './TestimonialCarousel'
 import ProjectsSection from './ProjectsSection'
 import BlogSection from './BlogSection'
@@ -40,19 +35,16 @@ export function HomePage({ data }: HomePageProps) {
         socialLinks={socialLinks}
         contactMeButton={contactMeButton}
       />
-
       <ServicesSection services={services} />
       {/* Header */}
       {/* {title && <Header centered title={title} description={overview} />} */}
       {/* Showcase projects */}
-
       {showcaseProjects && showcaseProjects.length > 0 && (
         <ProjectsSection showcaseProjects={showcaseProjects} />
       )}
       {blogPosts && blogPosts.length > 0 && (
         <BlogSection blogPosts={blogPosts} />
       )}
-
       <TestimonialCarousel testimonials={testimonials} />
     </div>
   )
