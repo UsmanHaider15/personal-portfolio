@@ -31,13 +31,13 @@ const Introduction = ({
     avatar && urlForImage(avatar)?.height(972).width(800).fit('crop').url()
 
   return (
-    <div className="container mx-auto md:grid md:grid-cols-3">
+    <div className="md:grid md:grid-cols-3 md:gap-4">
       <div className="col-span-1">
         <Image src={imageUrl} alt={name} width={800} height={972} />
       </div>
-      <div className="md:col-span-2 md:p-10">
+      <div className="md:col-span-2 md:p-20">
         {' '}
-        <div className="pb-10 block mb-0 font-serif text-5xl font-normal text-black">
+        <div className="pb-10 block font-serif text-5xl font-normal text-black">
           {name}
         </div>
         <div className="relative pl-24 leading-7 text-zinc-500">

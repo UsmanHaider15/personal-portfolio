@@ -13,10 +13,8 @@ export function BlogListItem(props: BlogProps) {
   const { blog, href } = props
 
   return (
-    <div
-      className={`flex flex-col gap-x-5 p-2 transition hover:bg-gray-50/50 border`}
-    >
-      <div className="w-full">
+    <div className="">
+      <div className="" style={{ width: 400 }}>
         <ImageBox
           image={blog.mainImage}
           alt={`Cover image from ${blog.title}`}

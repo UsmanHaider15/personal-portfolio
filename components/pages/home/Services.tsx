@@ -21,14 +21,7 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
       <div className="md:grid md:grid-cols-2">
         {services.map((service, key) => {
           return (
-            <div
-              className="leading-7 text-black md:col-span-1"
-              style={{
-                animationDuration: '1s',
-                animationFillMode: 'both',
-                animationName: 'fadeInUp',
-              }}
-            >
+            <div className="leading-7 text-black md:col-span-1">
               <h3
                 className="mx-0 mt-0 mb-4 font-sans text-base font-bold uppercase text-black"
                 style={{ lineHeight: '1.1' }}
