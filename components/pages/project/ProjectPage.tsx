@@ -1,6 +1,6 @@
 import { CustomPortableText } from 'components/shared/CustomPortableText'
-import { Header } from 'components/shared/Header'
-import ImageBox from 'components/shared/ImageBox'
+import { urlForImage } from 'lib/sanity.image'
+import Image from 'next/image'
 import Link from 'next/link'
 import type { ProjectPayload } from 'types'
 
@@ -24,64 +24,84 @@ export function ProjectPage({ data }: ProjectPageProps) {
   const startYear = new Date(duration?.start!).getFullYear()
   const endYear = duration?.end ? new Date(duration?.end).getFullYear() : 'Now'
 
+  const imageUrl =
+    coverImage &&
+    urlForImage(coverImage)?.height(2000).width(3500).fit('crop').url()
+
   return (
     <div>
       <div className="mb-20 space-y-6">
-        {/* Header */}
-        <Header title={title} description={overview} />
+        <div className="banner grid grid-cols-2 gap-4 ">
+          <div className="col-span-2 md:col-span-1">
+            {/* project title */}
+            <h1 className="mb-4 text-4xl leading-tight md:text-5xl">{title}</h1>
 
-        <div className="rounded-md border">
-          {/* Image  */}
-          <ImageBox
-            image={coverImage}
-            alt={`Cover image for ${title}`}
-            classesWrapper="relative aspect-[16/9]"
-          />
-
-          <div className="divide-inherit grid grid-cols-1 divide-y lg:grid-cols-4 lg:divide-x lg:divide-y-0">
-            {/* Duration */}
-            {!!(startYear && endYear) && (
-              <div className="p-3 lg:p-4">
-                <div className="text-xs md:text-sm">Duration</div>
-                <div className="text-md md:text-lg">{`${startYear} -  ${endYear}`}</div>
+            {/* Overview */}
+            {description && (
+              <div className="mt-4 font-serif text-xl text-gray-600 md:text-2xl">
+                <CustomPortableText value={description} />
               </div>
             )}
-
-            {/* Client */}
-            {client && (
-              <div className="p-3 lg:p-4">
-                <div className="text-xs md:text-sm">Client</div>
-                <div className="text-md md:text-lg">{client}</div>
-              </div>
-            )}
-
-            {/* Site */}
-            {site && (
-              <div className="p-3 lg:p-4">
-                <div className="text-xs md:text-sm">Site</div>
-                {site && (
-                  <Link
-                    target="_blank"
-                    className="text-md break-words md:text-lg"
-                    href={site}
-                  >
-                    {site}
-                  </Link>
-                )}
-              </div>
-            )}
-
-            {/* Tags */}
-            <div className="p-3 lg:p-4">
-              <div className="text-xs md:text-sm">Tags</div>
-              <div className="text-md flex flex-row flex-wrap md:text-lg">
+            {/* project details info */}
+            <ul className="mt-4 grid grid-cols-2 gap-4 text-black">
+              <li className="">
+                <div className="text-xs uppercase tracking-wider text-black/50">
+                  Client
+                </div>
+                {/* Client */}
+                {client && <div className="text-md md:text-lg">{client}</div>}
+              </li>
+              <li className="">
+                <div className="text-xs uppercase tracking-wider text-black/50">
+                  Timeline
+                </div>
+                <div className="mt-1 underline hover:no-underline">
+                  {!!(startYear && endYear) && (
+                    <div className="text-md md:text-lg">{`${startYear} -  ${endYear}`}</div>
+                  )}
+                </div>
+              </li>
+              <li className="">
+                <div className="text-xs uppercase tracking-wider text-black/50">
+                  Tags
+                </div>
                 {tags?.map((tag, key) => (
-                  <div key={key} className="mr-1 break-words ">
+                  <div
+                    key={key}
+                    className="inline-block rounded-full bg-gray-200 px-3 text-sm capitalize text-black"
+                  >
                     #{tag}
                   </div>
                 ))}
-              </div>
-            </div>
+              </li>
+              <li className="">
+                <div className="text-xs uppercase tracking-wider text-black/50">
+                  website
+                </div>
+                <div className="mt-1 underline hover:no-underline">
+                  {site && (
+                    <Link
+                      target="_blank"
+                      className="text-md break-words md:text-lg"
+                      href={site}
+                    >
+                      {site}
+                    </Link>
+                  )}
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div className="col-span-2 md:col-span-1">
+            {imageUrl && (
+              <Image
+                alt={'alt'}
+                width={3500}
+                height={2000}
+                src={imageUrl}
+                className="rounded-lg"
+              />
+            )}
           </div>
         </div>
 
