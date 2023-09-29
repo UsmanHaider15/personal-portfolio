@@ -2,6 +2,10 @@ import type { PortableTextBlock } from '@portabletext/types'
 import { CustomPortableText } from 'components/shared/CustomPortableText'
 import type { SettingsPayload } from 'types'
 import { FaHeart, FaRegHeart } from 'react-icons/fa'
+import { FiFacebook } from 'react-icons/fi'
+import { RiTwitterXFill } from 'react-icons/ri'
+import { CiLinkedin } from 'react-icons/ci'
+import { LuGithub } from 'react-icons/lu'
 
 interface FooterProps {
   data: SettingsPayload
@@ -29,17 +33,14 @@ export default function Footer(props: FooterProps) {
               href="#"
               className="cursor-pointer bg-transparent text-purple-400 hover:text-purple-400 focus:text-cyan-800"
             >
-              noah@info.com
+              usman.haider.developer@gmail.com
             </a>
           </p>
-          <p className="m-0 font-sans font-normal flex gap-2">
-            <a
-              href="#"
-              className="cursor-pointer bg-transparent text-purple-400 hover:text-purple-400 focus:text-cyan-800"
-            >
-              <FaHeart size={24} />
-            </a>
-            {/* Add more icons similarly */}
+          <p className="m-0 font-sans font-normal flex gap-2 text-purple-400">
+            <FiFacebook size={24} />
+            <RiTwitterXFill size={24} />
+            <CiLinkedin size={24} />
+            <LuGithub size={24} />
           </p>
         </div>
 

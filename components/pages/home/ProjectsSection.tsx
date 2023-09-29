@@ -23,7 +23,7 @@ const ProjectsSection = ({ showcaseProjects }: ProjectsSectionProps) => {
         </h2>
       </div>
 
-      <div className="mx-auto md:grid md:grid-cols-4 md:gap-4">
+      <div className="mx-auto md:grid md:grid-cols-2 md:gap-4">
         {showcaseProjects.map((project, key) => {
           const href = resolveHref(project._type, project.slug)
           if (!href) {
