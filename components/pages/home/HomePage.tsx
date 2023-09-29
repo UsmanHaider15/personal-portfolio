@@ -26,7 +26,7 @@ export function HomePage({ data }: HomePageProps) {
   } = data ?? {}
 
   return (
-    <div className="container mx-auto md:px-10">
+    <div>
       <Introduction
         name={name}
         avatar={avatar}
@@ -67,6 +67,7 @@ export function HomePage({ data }: HomePageProps) {
         </div>
         <TestimonialCarousel testimonials={testimonials} />
       </div>
+      <div className="py-20"></div>
     </div>
   )
 }

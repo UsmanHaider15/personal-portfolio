@@ -13,7 +13,7 @@ export default function Footer(props: FooterProps) {
   return (
     <div
       id="footer"
-      className="block w-full p-32 text-sm leading-5 text-zinc-800 "
+      className="block w-full md:p-32 text-sm leading-5 text-zinc-800 "
     >
       <div className="mx-auto px-4 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4">
         {/* Let's Talk Section */}
@@ -46,7 +46,7 @@ export default function Footer(props: FooterProps) {
         {/* Latest Blog Section */}
         <div className="mb-20">
           <div
-            className="relative px-4 mb-20 leading-7 lg:float-left lg:w-1/3 text-zinc-500"
+            className="px-4 mb-20 leading-7 text-zinc-500"
             style={{ minHeight: 1 }}
           >
             <h2
@@ -55,7 +55,7 @@ export default function Footer(props: FooterProps) {
             >
               Latest Blog
             </h2>
-            <div className="relative mb-10 text-zinc-500">
+            <div className="mb-10 text-zinc-500">
               <a
                 href="#"
                 className="text-purple-400 bg-transparent cursor-pointer hover:text-purple-400 focus:text-cyan-800"
@@ -89,7 +89,7 @@ export default function Footer(props: FooterProps) {
                 </h3>
               </div>
             </div>
-            <div className="relative mb-10 text-zinc-500">
+            <div className="mb-10 text-zinc-500">
               <a
                 href="#"
                 className="text-purple-400 bg-transparent cursor-pointer hover:text-purple-400 focus:text-cyan-800"
@@ -123,7 +123,7 @@ export default function Footer(props: FooterProps) {
                 </h3>
               </div>
             </div>
-            <div className="relative mb-10 text-zinc-500">
+            <div className="mb-10 text-zinc-500">
               <a
                 href="#"
                 className="text-purple-400 bg-transparent cursor-pointer hover:text-purple-400 focus:text-cyan-800"
@@ -185,30 +185,8 @@ export default function Footer(props: FooterProps) {
           </div>
         </div>
       </div>
-      <p className="m-0 font-sans font-normal leading-7 text-center text-zinc-500">
-        ©
-        {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
-        Copyright © 2023 All rights reserved | This template is made with
-        <i
-          className="not-italic leading-none normal-case"
-          aria-hidden="true"
-          style={{
-            speak: 'none',
-            fontWeight: 'normal',
-            fontVariant: 'normal',
-            fontFamily: 'icomoon',
-          }}
-        />
-        by
-        <a
-          href="https://colorlib.com"
-          target="_blank"
-          className="text-center text-purple-400 bg-transparent cursor-pointer hover:text-purple-400 focus:text-cyan-800"
-          style={{ textDecoration: 'none', transition: 'all 0.5s ease 0s' }}
-        >
-          Colorlib
-        </a>
-        {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
+      <p className="m-0 text-center font-sans font-normal leading-7 text-zinc-500">
+        © Copyright 2023 All rights reserved Usman Haider
       </p>
     </div>
   )
