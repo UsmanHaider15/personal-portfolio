@@ -1,6 +1,8 @@
 import type { PortableTextBlock } from '@portabletext/types'
 import { CustomPortableText } from 'components/shared/CustomPortableText'
 import ImageBox from 'components/shared/ImageBox'
+import { urlForImage } from 'lib/sanity.image'
+import Image from 'next/image'
 import Link from 'next/link'
 import type { BlogPosts } from 'types'
 
@@ -12,14 +14,13 @@ interface BlogProps {
 export function BlogListItem(props: BlogProps) {
   const { blog, href } = props
 
+  const imageUrl =
+    blog.mainImage && urlForImage(blog.mainImage)?.fit('crop').url()
+
   return (
-    <div className="">
-      <div className="" style={{ width: 400 }}>
-        <ImageBox
-          image={blog.mainImage}
-          alt={`Cover image from ${blog.title}`}
-          classesWrapper="relative aspect-[16/9]"
-        />
+    <div>
+      <div className="relative" style={{ width: 300, height: 200 }}>
+        {imageUrl && <Image alt={blog.title} src={imageUrl} fill={true} />}
       </div>
       <div className="flex">
         <BlogTextBox blog={blog} href={href} />

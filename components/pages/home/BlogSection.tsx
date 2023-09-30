@@ -30,13 +30,13 @@ const BlogSection = ({ blogPosts }: BlogSectionProps) => {
       </div>
       <div className="mx-auto">
         <Swiper
-          slidesPerView={3}
-          spaceBetween={30}
+          slidesPerView={1}
+          spaceBetween={0}
+          breakpoints={{ 480: { slidesPerView: 3, spaceBetween: 15 } }}
           pagination={{
             clickable: true,
           }}
           modules={[Pagination]}
-          className="mySwiper"
         >
           {blogPosts.map((blog, key) => {
             const href = resolveHref(blog._type, blog.slug)
