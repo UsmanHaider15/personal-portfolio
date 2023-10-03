@@ -3,68 +3,73 @@ import { Header } from 'components/shared/Header'
 import ImageBox from 'components/shared/ImageBox'
 import Link from 'next/link'
 import type { BlogPayload } from 'types'
+import { FaTwitter, FaFacebookF, FaLinkedinIn } from 'react-icons/fa'
+import ShareIcons from './ShareIcon'
 
 export interface BlogPageProps {
   data: BlogPayload | null
 }
 
 export function BlogPage({ data }: BlogPageProps) {
-  const { title, author, publishedAt, mainImage, categories, body, overview } =
-    data ?? {}
+  const {
+    title,
+    author,
+    publishedAt,
+    mainImage,
+    categories,
+    body,
+    overview,
+    slug,
+  } = data ?? {}
 
   const publishedDate = publishedAt
     ? new Date(publishedAt).toLocaleDateString()
     : 'Unpublished'
 
   return (
-    <div>
-      <div className="mb-20 space-y-6">
+    <div className="">
+      <div className="mb-20">
         {/* Header */}
-        <Header title={title} description={overview} />
+        <h1
+          className="m-0 mb-4 font-sans not-italic font-bold tracking-normal break-words text-neutral-800 lg:text-4xl sm:text-3xl sm:leading-9 sm:tracking-tight"
+          data-testid="storyTitle"
+          data-selectable-paragraph=""
+          style={{ lineHeight: '1.23', wordBreak: 'break-word' }}
+        >
+          8 Advanced JavaScript Interview Questions for Senior Roles
+        </h1>
 
-        <div className="rounded-md border">
+        <div className="m-0 mb-4 lg:text-lg sm:text-md">
+          <CustomPortableText
+            paragraphClasses="font-serif text-gray-700"
+            value={overview}
+          />
+        </div>
+
+        <div className="border-t border-b p-2 flex justify-between items-center mb-6">
+          {!!publishedDate && author && (
+            <div className="m-0">
+              {author} - {publishedDate}
+            </div>
+          )}
+          <ShareIcons postSlug={slug} />
+        </div>
+
+        {/* <Header title={title} description={overview} /> */}
+
+        <div className="rounded-md border mb-10">
           {/* Image */}
           <ImageBox
             image={mainImage}
             alt={`Main image for ${title}`}
             classesWrapper="relative aspect-[16/9]"
           />
-
-          <div className="divide-inherit grid grid-cols-1 divide-y lg:grid-cols-4 lg:divide-x lg:divide-y-0">
-            {/* Author */}
-            {author && (
-              <div className="p-3 lg:p-4">
-                <div className="text-xs md:text-sm">Author</div>
-                <div className="text-md md:text-lg">{author}</div>
-              </div>
-            )}
-
-            {/* Published Date */}
-            {!!publishedDate && (
-              <div className="p-3 lg:p-4">
-                <div className="text-xs md:text-sm">Published</div>
-                <div className="text-md md:text-lg">{publishedDate}</div>
-              </div>
-            )}
-
-            {/* Categories */}
-            <div className="p-3 lg:p-4">
-              <div className="text-xs md:text-sm">Categories</div>
-              <div className="text-md flex flex-row flex-wrap md:text-lg">
-                {categories?.map((category, key) => (
-                  <div key={key} className="mr-1 break-words ">
-                    #{category}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Body */}
         {body && (
           <CustomPortableText
-            paragraphClasses="font-serif max-w-3xl text-xl text-gray-600"
+            paragraphClasses="font-serif text-neutral-800 lg:text-lg lg:leading-8 sm:text-md sm:leading-7"
             value={body}
           />
         )}

@@ -38,7 +38,6 @@ export function HomePage({ data }: HomePageProps) {
       <div className="py-20"></div>
       <ServicesSection services={services} />
       {/* Header */}
-      {/* {title && <Header centered title={title} description={overview} />} */}
       <div className="py-20"></div>
       {/* Showcase projects */}
       {showcaseProjects && showcaseProjects.length > 0 && (
