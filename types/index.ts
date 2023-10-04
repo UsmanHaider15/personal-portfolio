@@ -42,8 +42,8 @@ export interface BlogPosts {
   _type: string
   mainImage?: Image
   overview?: PortableTextBlock[]
-  slug?: string
-  title?: string
+  slug: string
+  title: string
 }
 
 export interface Service {

@@ -27,21 +27,19 @@ export function BlogPage({ data }: BlogPageProps) {
     : 'Unpublished'
 
   return (
-    <div className="">
-      <div className="mb-20">
+    <div>
+      <div className="mb-20 space-y-6">
         {/* Header */}
         <h1
           className="m-0 mb-4 font-sans not-italic font-bold tracking-normal break-words text-neutral-800 lg:text-4xl sm:text-3xl sm:leading-9 sm:tracking-tight"
-          data-testid="storyTitle"
-          data-selectable-paragraph=""
           style={{ lineHeight: '1.23', wordBreak: 'break-word' }}
         >
           8 Advanced JavaScript Interview Questions for Senior Roles
         </h1>
 
-        <div className="m-0 mb-4 lg:text-lg sm:text-md">
+        <div>
           <CustomPortableText
-            paragraphClasses="font-serif text-gray-700"
+            paragraphClasses="m-0 mb-4 lg:text-lg sm:text-md font-serif text-gray-700"
             value={overview}
           />
         </div>

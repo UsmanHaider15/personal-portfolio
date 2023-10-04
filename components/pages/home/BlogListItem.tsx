@@ -14,12 +14,14 @@ interface BlogProps {
 export function BlogListItem(props: BlogProps) {
   const { blog, href } = props
 
+  if (!blog) return null
+
   const imageUrl =
     blog.mainImage && urlForImage(blog.mainImage)?.fit('crop').url()
 
   return (
     <div>
-      <div className="relative" style={{ width: 300, height: 200 }}>
+      <div className="relative" style={{ height: 200 }}>
         {imageUrl && <Image alt={blog.title} src={imageUrl} fill={true} />}
       </div>
       <div className="flex">

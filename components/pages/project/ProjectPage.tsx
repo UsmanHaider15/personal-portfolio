@@ -34,12 +34,20 @@ export function ProjectPage({ data }: ProjectPageProps) {
         <div className="banner grid grid-cols-2 gap-4 ">
           <div className="col-span-2 md:col-span-1">
             {/* project title */}
-            <h1 className="mb-4 text-4xl leading-tight md:text-5xl">{title}</h1>
+            <h1
+              className="m-0 mb-4 font-sans not-italic font-bold tracking-normal break-words text-neutral-800 lg:text-4xl sm:text-3xl sm:leading-9 sm:tracking-tight"
+              style={{ lineHeight: '1.23', wordBreak: 'break-word' }}
+            >
+              {title}
+            </h1>
 
             {/* Overview */}
-            {description && (
-              <div className="mt-4 font-serif text-xl text-gray-600 md:text-2xl">
-                <CustomPortableText value={description} />
+            {overview && (
+              <div>
+                <CustomPortableText
+                  paragraphClasses="m-0 mb-4 lg:text-lg sm:text-md font-serif text-gray-700"
+                  value={overview}
+                />
               </div>
             )}
             {/* project details info */}
@@ -108,12 +116,11 @@ export function ProjectPage({ data }: ProjectPageProps) {
         {/* Description */}
         {description && (
           <CustomPortableText
-            paragraphClasses="font-serif max-w-3xl text-xl text-gray-600"
+            paragraphClasses="font-serif text-neutral-800 lg:text-lg lg:leading-8 sm:text-md sm:leading-7"
             value={description}
           />
         )}
       </div>
-      <div className="absolute left-0 w-screen border-t" />
     </div>
   )
 }
