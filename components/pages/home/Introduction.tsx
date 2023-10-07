@@ -35,9 +35,9 @@ const Introduction = ({
       <div className="col-span-1">
         <Image src={imageUrl} alt={name} width={800} height={972} />
       </div>
-      <div className="md:col-span-2 md:p-20">
+      <div className="md:col-span-2 md:p-10">
         {' '}
-        <div className="pb-10 block font-serif text-5xl font-normal text-black">
+        <div className="pt-10 pb-10 block font-serif text-5xl font-normal text-black">
           {name}
         </div>
         <div className="relative pl-24 leading-7 text-zinc-500">

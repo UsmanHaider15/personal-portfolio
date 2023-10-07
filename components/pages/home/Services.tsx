@@ -7,31 +7,32 @@ interface ServicesSectionProps {
 const ServicesSection = ({ services }: ServicesSectionProps) => {
   return (
     <div>
-      <div className="leading-7">
+      <div className="flex flex-col justify-center items-center">
         <span
-          className="mb-2 block font-sans text-xs font-semibold uppercase leading-5 text-stone-300 opacity-30"
+          className="mb-2 block font-sans text-xs font-semibold uppercase leading-5 text-stone-300 opacity-30 text-center"
           style={{ letterSpacing: 3 }}
         >
           My Services
         </span>
-        <h2 className="relative mx-0 mb-6 mt-0 font-serif text-4xl font-normal leading-normal text-black">
+        <h2 className="mx-0 mb-6 mt-0 font-serif text-4xl font-normal leading-normal text-black text-center">
           Here Are Some of My Skills
         </h2>
       </div>
+
       <div className="md:grid md:grid-cols-2">
         {services.map((service, key) => {
           return (
-            <div className="leading-7 text-black md:col-span-1">
+            <div className="leading-7 text-black md:col-span-1 flex flex-col items-center justify-center">
               <h3
-                className="mx-0 mt-0 mb-4 font-sans text-base font-bold uppercase text-black"
+                className="mx-0 mt-0 mb-4 font-sans text-base font-bold uppercase text-black text-center"
                 style={{ lineHeight: '1.1' }}
               >
                 {key + 1} - {service.serviceName}
               </h3>
-              <ul className="block mt-0 mb-6 text-black">
+              <ul className="block mt-0 mb-6 text-black text-center">
                 {service.subServices.map((subService, key) => (
                   <li
-                    className="mb-2 text-left text-stone-300 opacity-50"
+                    className="mb-2 text-center text-stone-300 opacity-50"
                     style={{ listStyle: 'none' }}
                   >
                     {subService}
