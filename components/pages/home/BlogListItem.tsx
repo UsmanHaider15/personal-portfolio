@@ -20,7 +20,7 @@ export function BlogListItem(props: BlogProps) {
     blog.mainImage && urlForImage(blog.mainImage)?.fit('crop').url()
 
   return (
-    <div>
+    <div className="cursor-pointer hover:shadow-lg p-2 hover:rounded-md">
       <div className="relative" style={{ height: 200 }}>
         {imageUrl && <Image alt={blog.title} src={imageUrl} fill={true} />}
       </div>

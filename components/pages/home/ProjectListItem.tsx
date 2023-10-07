@@ -45,7 +45,7 @@ function ProjectTextBox({ project, href }: ProjectProps) {
         <p className="mx-0 mt-0  font-sans font-normal leading-7 text-right text-zinc-500">
           <Link
             href={href}
-            className="w-10 h-px text-xs leading-5 text-black uppercase cursor-pointer hover:text-purple-400 focus:text-cyan-800"
+            className="w-10 h-px text-xs leading-5 text-black uppercase cursor-pointer hover:text-purple-400 focus:text-cyan-800 underline"
           >
             View details
           </Link>

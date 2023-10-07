@@ -27,26 +27,13 @@ export function BlogPage({ data }: BlogPageProps) {
     : 'Unpublished'
 
   return (
-    <div>
-      <div className="mb-20 space-y-6">
-        {/* Header */}
-        <h1
-          className="m-0 mb-4 font-sans not-italic font-bold tracking-normal break-words text-neutral-800 lg:text-4xl sm:text-3xl sm:leading-9 sm:tracking-tight"
-          style={{ lineHeight: '1.23', wordBreak: 'break-word' }}
-        >
-          8 Advanced JavaScript Interview Questions for Senior Roles
-        </h1>
+    <div className="md:mx-auto md:w-7/12">
+      <div className="mb-20">
+        <h1 className="font-bold text-2xl md:text-5xl mb-4">{title}</h1>
 
-        <div>
-          <CustomPortableText
-            paragraphClasses="m-0 mb-4 lg:text-lg sm:text-md font-serif text-gray-700"
-            value={overview}
-          />
-        </div>
-
-        <div className="border-t border-b p-2 flex justify-between items-center mb-6">
+        <div className="border-t border-b flex justify-between items-center mb-6">
           {!!publishedDate && author && (
-            <div className="m-0">
+            <div className="text-sm md:text-md">
               {author} - {publishedDate}
             </div>
           )}
@@ -61,6 +48,13 @@ export function BlogPage({ data }: BlogPageProps) {
             image={mainImage}
             alt={`Main image for ${title}`}
             classesWrapper="relative aspect-[16/9]"
+          />
+        </div>
+
+        <div>
+          <CustomPortableText
+            paragraphClasses="m-0 mb-4 lg:text-lg sm:text-md font-serif text-gray-700"
+            value={overview}
           />
         </div>
 

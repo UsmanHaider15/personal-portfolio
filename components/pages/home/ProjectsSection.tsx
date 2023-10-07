@@ -30,7 +30,7 @@ const ProjectsSection = ({ showcaseProjects }: ProjectsSectionProps) => {
             return null
           }
           return (
-            <div className="md:col-span-1">
+            <div className="md:col-span-1 p-2 md:p-4 mb-4 hover:shadow-lg cursor-pointer">
               <ProjectListItem project={project} href={href} />
             </div>
           )
