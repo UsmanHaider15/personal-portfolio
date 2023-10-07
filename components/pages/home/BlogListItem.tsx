@@ -35,11 +35,9 @@ function BlogTextBox({ blog, href }: BlogProps) {
   return (
     <div className="relative mt-2 flex w-full flex-col justify-between p-3 xl:mt-0">
       <div>
-        {/* Title */}
         <div className="mb-2 text-lg font-extrabold tracking-tight md:text-xl text-left">
           {blog.title}
         </div>
-        {/* Overview  */}
         <div className="font-serif text-gray-700 text-sm text-left">
           <CustomPortableText value={blog.overview as PortableTextBlock[]} />
         </div>

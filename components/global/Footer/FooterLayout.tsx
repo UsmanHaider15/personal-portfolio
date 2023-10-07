@@ -19,7 +19,7 @@ export default function Footer(props: FooterProps) {
       id="footer"
       className="block w-full md:p-32 text-sm leading-5 text-zinc-800 "
     >
-      <div className="mx-auto px-4 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4">
+      <div className="mx-auto px-4 lg:flex lg:justify-between">
         {/* Let's Talk Section */}
         <div className="mb-20">
           <h2 className="mt-0 mb-4 font-serif text-3xl font-light tracking-wider text-black">
@@ -42,123 +42,6 @@ export default function Footer(props: FooterProps) {
             <CiLinkedin size={24} />
             <LuGithub size={24} />
           </p>
-        </div>
-
-        {/* Latest Blog Section */}
-        <div className="mb-20">
-          <div
-            className="px-4 mb-20 leading-7 text-zinc-500"
-            style={{ minHeight: 1 }}
-          >
-            <h2
-              className="mx-0 mt-0 mb-4 font-serif text-3xl font-light tracking-wider text-black"
-              style={{ lineHeight: '1.1' }}
-            >
-              Latest Blog
-            </h2>
-            <div className="mb-10 text-zinc-500">
-              <a
-                href="#"
-                className="text-purple-400 bg-transparent cursor-pointer hover:text-purple-400 focus:text-cyan-800"
-                style={{
-                  backgroundImage: 'url("images/img-1.jpg")',
-                  textDecoration: 'none',
-                  transition: 'all 0.5s ease 0s',
-                }}
-              />
-              <div className="">
-                <span
-                  className="block mb-2 font-sans text-xs font-normal leading-5 text-black uppercase"
-                  style={{ letterSpacing: 2 }}
-                >
-                  February 15, 2018
-                </span>
-                <h3
-                  className="mx-0 mt-0 mb-2 font-serif text-xl font-medium text-zinc-800"
-                  style={{ lineHeight: '1.4' }}
-                >
-                  <a
-                    href="#"
-                    className="bg-transparent cursor-pointer text-neutral-600 hover:text-purple-400 focus:text-cyan-800"
-                    style={{
-                      textDecoration: 'none',
-                      transition: 'all 0.5s ease 0s',
-                    }}
-                  >
-                    Art Gallery in Japan
-                  </a>
-                </h3>
-              </div>
-            </div>
-            <div className="mb-10 text-zinc-500">
-              <a
-                href="#"
-                className="text-purple-400 bg-transparent cursor-pointer hover:text-purple-400 focus:text-cyan-800"
-                style={{
-                  backgroundImage: 'url("images/img-2.jpg")',
-                  textDecoration: 'none',
-                  transition: 'all 0.5s ease 0s',
-                }}
-              />
-              <div className="">
-                <span
-                  className="block mb-2 font-sans text-xs font-normal leading-5 text-black uppercase"
-                  style={{ letterSpacing: 2 }}
-                >
-                  February 9, 2018
-                </span>
-                <h3
-                  className="mx-0 mt-0 mb-2 font-serif text-xl font-medium text-zinc-800"
-                  style={{ lineHeight: '1.4' }}
-                >
-                  <a
-                    href="#"
-                    className="bg-transparent cursor-pointer text-neutral-600 hover:text-purple-400 focus:text-cyan-800"
-                    style={{
-                      textDecoration: 'none',
-                      transition: 'all 0.5s ease 0s',
-                    }}
-                  >
-                    A Japanese Constellation
-                  </a>
-                </h3>
-              </div>
-            </div>
-            <div className="mb-10 text-zinc-500">
-              <a
-                href="#"
-                className="text-purple-400 bg-transparent cursor-pointer hover:text-purple-400 focus:text-cyan-800"
-                style={{
-                  backgroundImage: 'url("images/img-3.jpg")',
-                  textDecoration: 'none',
-                  transition: 'all 0.5s ease 0s',
-                }}
-              />
-              <div className="">
-                <span
-                  className="block mb-2 font-sans text-xs font-normal leading-5 text-black uppercase"
-                  style={{ letterSpacing: 2 }}
-                >
-                  February 15, 2018
-                </span>
-                <h3
-                  className="mx-0 mt-0 mb-2 font-serif text-xl font-medium text-zinc-800"
-                  style={{ lineHeight: '1.4' }}
-                >
-                  <a
-                    href="#"
-                    className="bg-transparent cursor-pointer text-neutral-600 hover:text-purple-400 focus:text-cyan-800"
-                    style={{
-                      textDecoration: 'none',
-                      transition: 'all 0.5s ease 0s',
-                    }}
-                  >
-                    Road Trip
-                  </a>
-                </h3>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Newsletter Section */}
@@ -191,15 +74,4 @@ export default function Footer(props: FooterProps) {
       </p>
     </div>
   )
-  // return (
-  //   <footer className="bottom-0 w-full bg-white py-12 text-center md:py-20">
-  //     {footer && (
-  //       <CustomPortableText
-  //         paragraphClasses="text-md md:text-xl"
-  //         value={footer}
-  //       />
-  //     )}
-
-  //   </footer>
-  // )
 }
