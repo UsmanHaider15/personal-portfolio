@@ -69,7 +69,7 @@ export default function Footer(props: FooterProps) {
           </div>
         </div>
       </div>
-      <p className="m-0 text-center font-sans font-normal leading-7 text-zinc-500">
+      <p className="m-0 mb-4 text-center font-sans font-normal leading-7 text-zinc-500">
         © Copyright 2023 All rights reserved Usman Haider
       </p>
     </div>

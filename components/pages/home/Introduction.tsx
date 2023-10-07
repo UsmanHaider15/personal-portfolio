@@ -40,7 +40,7 @@ const Introduction = ({
         <div className="pt-10 pb-10 block font-serif text-5xl font-normal text-black">
           {name}
         </div>
-        <div className="relative pl-24 leading-7 text-zinc-500">
+        <div className="relative pl-12 leading-7 text-zinc-500">
           <div className="absolute" style={{ top: '7px', left: '30px' }}>
             <h2
               className="absolute mx-0 mt-0 mb-4 w-10 h-px font-sans text-sm font-medium uppercase bg-black text-zinc-800"
