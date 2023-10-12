@@ -14,9 +14,50 @@ export function CustomPortableText({
   const components: PortableTextComponents = {
     block: {
       normal: ({ children }) => {
-        return <p className={paragraphClasses}>{children}</p>
+        return <p className="text-base sm:text-lg">{children}</p>
+      },
+      h1: ({ children }) => {
+        return (
+          <h1 className="text-3xl sm:text-4xl md:text-5xl py-2 sm:py-3 md:py-4">
+            {children}
+          </h1>
+        )
+      },
+      h2: ({ children }) => {
+        return (
+          <h2 className="text-2xl sm:text-3xl md:text-4xl py-2 sm:py-3 md:py-4">
+            {children}
+          </h2>
+        )
+      },
+      h3: ({ children }) => {
+        return (
+          <h3 className="text-xl sm:text-2xl md:text-3xl py-1 sm:py-2 md:py-3">
+            {children}
+          </h3>
+        )
+      },
+      h4: ({ children }) => {
+        return (
+          <h4 className="text-lg sm:text-xl md:text-2xl py-1 sm:py-2 md:py-3">
+            {children}
+          </h4>
+        )
+      },
+      h5: ({ children }) => {
+        return (
+          <h5 className="text-base sm:text-lg md:text-xl py-1 sm:py-2">
+            {children}
+          </h5>
+        )
+      },
+      h6: ({ children }) => {
+        return (
+          <h6 className="text-sm sm:text-base md:text-lg py-1">{children}</h6>
+        )
       },
     },
+
     marks: {
       link: ({ children, value }) => {
         return (
