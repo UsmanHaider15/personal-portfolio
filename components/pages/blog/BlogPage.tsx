@@ -51,12 +51,12 @@ export function BlogPage({ data }: BlogPageProps) {
           />
         </div>
 
-        <div>
+        {/* <div>
           <CustomPortableText
             paragraphClasses="m-0 mb-4 lg:text-lg sm:text-md font-serif text-gray-700"
             value={overview}
           />
-        </div>
+        </div> */}
 
         {/* Body */}
         {body && (
