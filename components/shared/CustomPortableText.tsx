@@ -58,6 +58,23 @@ export function CustomPortableText({
       },
     },
 
+    list: {
+      bullet: ({ children }) => {
+        return (
+          <ul className="list-disc list-inside text-base sm:text-lg">
+            {children}
+          </ul>
+        )
+      },
+      number: ({ children }) => {
+        return (
+          <ol className="list-decimal list-inside text-base sm:text-lg">
+            {children}
+          </ol>
+        )
+      },
+    },
+
     marks: {
       link: ({ children, value }) => {
         return (

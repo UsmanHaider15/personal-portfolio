@@ -124,6 +124,10 @@ export default defineType({
             { title: 'H6', value: 'h6' },
             { title: 'Quote', value: 'blockquote' },
           ],
+          lists: [
+            { title: 'Bullet', value: 'bullet' },
+            { title: 'Number', value: 'number' },
+          ],
         }),
         // Custom blocks
         defineArrayMember({
