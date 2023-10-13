@@ -183,64 +183,16 @@ export default defineType({
         }),
       ],
     }),
-    // add feild for testimonials
     defineField({
       name: 'testimonials',
       title: 'Testimonials',
-      description: 'These are the testimonials that will appear on your page.',
+      description:
+        'These are the testimonials that will appear first on your landing page.',
       type: 'array',
       of: [
         defineArrayMember({
-          type: 'object',
-          fields: [
-            defineField({
-              name: 'name',
-              description: 'This field is the name of the testimonial.',
-              title: 'Name',
-              type: 'string',
-              validation: (rule) => rule.required(),
-            }),
-            defineField({
-              name: 'overview',
-              description: 'This field is the overview of the testimonial.',
-              title: 'Overview',
-              type: 'array',
-              of: [
-                defineArrayMember({
-                  lists: [],
-                  marks: {
-                    annotations: [
-                      {
-                        name: 'link',
-                        type: 'object',
-                        title: 'Link',
-                        fields: [
-                          {
-                            name: 'href',
-                            type: 'url',
-                            title: 'Url',
-                          },
-                        ],
-                      },
-                    ],
-                    decorators: [
-                      {
-                        title: 'Italic',
-                        value: 'em',
-                      },
-                      {
-                        title: 'Strong',
-                        value: 'strong',
-                      },
-                    ],
-                  },
-                  styles: [],
-                  type: 'block',
-                }),
-              ],
-              validation: (rule) => rule.max(155).required(),
-            }),
-          ],
+          type: 'reference',
+          to: [{ type: 'testimonial' }],
         }),
       ],
     }),

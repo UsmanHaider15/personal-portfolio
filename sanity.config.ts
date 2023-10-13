@@ -21,6 +21,7 @@ import milestone from 'schemas/objects/milestone'
 import timeline from 'schemas/objects/timeline'
 import home from 'schemas/singletons/home'
 import settings from 'schemas/singletons/settings'
+import testimonial from 'schemas/documents/testimonial'
 
 const title =
   process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE ||
@@ -68,6 +69,7 @@ export default defineConfig({
       page,
       project,
       blog,
+      testimonial,
       // Objects
       milestone,
       timeline,

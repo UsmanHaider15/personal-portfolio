@@ -53,8 +53,10 @@ export interface Service {
 }
 
 export interface Testimonial {
-  name: string
-  overview: PortableTextBlock[]
+  author: string
+  role: string
+  image: Image
+  content: PortableTextBlock[]
 }
 
 export interface HomePagePayload {

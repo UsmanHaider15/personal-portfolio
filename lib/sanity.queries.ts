@@ -19,14 +19,20 @@ export const homePageQuery = groq`
       "slug": slug.current,
       title,
     },
+    testimonials[]->{
+      author,
+      role,
+      image,
+      content,
+      receivedAt,
+    },
     name,
     avatar,
     tagLine,
     socialLinks,
     contactMeButton,
     services,
-    testimonials
-  }
+    }
 `
 
 export const homePageTitleQuery = groq`
