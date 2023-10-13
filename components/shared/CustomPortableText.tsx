@@ -14,7 +14,7 @@ export function CustomPortableText({
   const components: PortableTextComponents = {
     block: {
       normal: ({ children }) => {
-        return <p className="text-base sm:text-lg">{children}</p>
+        return <p className={paragraphClasses}>{children}</p>
       },
       h1: ({ children }) => {
         return (

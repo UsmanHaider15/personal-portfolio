@@ -15,19 +15,16 @@ export default function Footer(props: FooterProps) {
   const footer = data?.footer || ([] as PortableTextBlock[])
 
   return (
-    <div
-      id="footer"
-      className="block w-full md:p-32 text-sm leading-5 text-zinc-800 "
-    >
-      <div className="mx-auto px-4 lg:flex lg:justify-between">
+    <div id="footer" className="block w-full md:p-32 text-sm">
+      <div className="mx-auto px-4 lg:grid lg:grid-cols-2 text-center lg:text-left">
         {/* Let's Talk Section */}
-        <div className="mb-20">
+        <div className="md:grid-span-1 mb-20 lg:mb-0">
           <h2 className="mt-0 mb-4 font-serif text-3xl font-light tracking-wider text-black">
             Let's Talk
           </h2>
-          <p className="mb-6 mt-0 font-sans font-normal">
+          {/* <p className="mb-6 mt-0 font-sans font-normal">
             A small river named Duden flows by their place and supplies.
-          </p>
+          </p> */}
           <p className="mb-6 mt-0 font-sans font-normal">
             <a
               href="#"
@@ -36,7 +33,7 @@ export default function Footer(props: FooterProps) {
               usman.haider.developer@gmail.com
             </a>
           </p>
-          <p className="m-0 font-sans font-normal flex gap-2 text-purple-400">
+          <p className="m-0 font-sans font-normal flex gap-2 text-purple-400 justify-center lg:justify-start">
             <FiFacebook size={24} />
             <RiTwitterXFill size={24} />
             <CiLinkedin size={24} />
@@ -45,14 +42,14 @@ export default function Footer(props: FooterProps) {
         </div>
 
         {/* Newsletter Section */}
-        <div>
+        <div className="md:grid-span-1">
           <h2 className="mt-0 mb-4 font-serif text-3xl font-light tracking-wider text-black">
             Newsletter
           </h2>
-          <p className="mb-6 mt-0 font-sans font-normal">
+          {/* <p className="mb-6 mt-0 font-sans font-normal">
             A small river named Duden flows by their place and supplies it with
             the necessary regelialia.
-          </p>
+          </p> */}
           <div className="text-center">
             <div className="mb-8">
               <input

@@ -38,8 +38,11 @@ function BlogTextBox({ blog, href }: BlogProps) {
         <div className="mb-2 text-lg font-extrabold tracking-tight md:text-xl text-left">
           {blog.title}
         </div>
-        <div className="font-serif text-gray-700 text-sm text-left">
-          <CustomPortableText value={blog.overview as PortableTextBlock[]} />
+        <div className="font-serif text-left">
+          <CustomPortableText
+            paragraphClasses={`text-sm text-gray-800`}
+            value={blog.overview as PortableTextBlock[]}
+          />
         </div>
       </div>
       <div>

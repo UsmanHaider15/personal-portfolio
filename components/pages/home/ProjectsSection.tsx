@@ -13,7 +13,7 @@ const ProjectsSection = ({ showcaseProjects }: ProjectsSectionProps) => {
     <div>
       <div className="mb-12 px-4 text-center leading-7 text-zinc-500 ">
         <span
-          className="mb-2 block font-sans text-xs font-semibold uppercase leading-5 text-gray-500"
+          className="mb-2 block font-sans text-xs font-semibold uppercase text-gray-600"
           style={{ letterSpacing: 3 }}
         >
           Portfolio

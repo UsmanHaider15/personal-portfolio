@@ -55,7 +55,7 @@ export function HomePage({ data }: HomePageProps) {
       <div>
         <div className="px-4 text-center leading-7">
           <span
-            className="mb-2 block font-sans text-xs font-semibold uppercase leading-5 text-stone-300"
+            className="mb-2 block font-sans text-xs font-semibold uppercase text-gray-600"
             style={{ letterSpacing: '3px' }}
           >
             Testimonies

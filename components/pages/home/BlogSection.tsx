@@ -17,9 +17,9 @@ const BlogSection = ({ blogPosts }: BlogSectionProps) => {
   return (
     <div>
       {' '}
-      <div className="mb-12 text-center leading-7 text-gray-700 ">
+      <div className="mb-12 text-center">
         <span
-          className="mb-2 block font-sans text-xs font-semibold uppercase leading-5 text-stone-300"
+          className="mb-2 block font-sans text-xs font-semibold uppercase text-gray-600"
           style={{ letterSpacing: 3 }}
         >
           Blog
