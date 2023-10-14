@@ -68,6 +68,33 @@ export default defineType({
       ],
     }),
     defineField({
+      name: 'socialMediaLinks',
+      title: 'Social Media Links',
+      description: 'Links to your social media profiles.',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          title: 'Social Media Link',
+          fields: [
+            {
+              name: 'name',
+              title: 'Platform Name',
+              type: 'string',
+              description:
+                'Name of the social media platform (e.g., "Facebook").',
+            },
+            {
+              name: 'url',
+              title: 'URL',
+              type: 'url',
+              description: 'Link to the social media profile.',
+            },
+          ],
+        },
+      ],
+    }),
+    defineField({
       name: 'ogImage',
       title: 'Open Graph Image',
       type: 'image',

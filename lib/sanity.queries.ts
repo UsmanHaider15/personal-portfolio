@@ -29,7 +29,6 @@ export const homePageQuery = groq`
     name,
     avatar,
     tagLine,
-    socialLinks,
     contactMeButton,
     services,
     }
@@ -98,6 +97,7 @@ export const settingsQuery = groq`
       "slug": slug.current,
       title
     },
+    socialMediaLinks[],
     ogImage,
   }
 `

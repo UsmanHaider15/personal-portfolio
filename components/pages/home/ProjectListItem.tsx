@@ -13,22 +13,24 @@ export function ProjectListItem(props: ProjectProps) {
   const { project, href } = props
 
   return (
-    <>
-      <div>
-        <ImageBox
-          image={project.coverImage}
-          alt={`Cover image from ${project.title}`}
-          classesWrapper="relative aspect-[16/9]"
-        />
-      </div>
-      <div>
-        <ProjectTextBox project={project} href={href} />
-      </div>
-    </>
+    <div>
+      <Link href={href} passHref>
+        <div>
+          <ImageBox
+            image={project.coverImage}
+            alt={`Cover image from ${project.title}`}
+            classesWrapper="relative aspect-[16/9]"
+          />
+        </div>
+        <div>
+          <ProjectTextBox project={project} />
+        </div>
+      </Link>
+    </div>
   )
 }
 
-function ProjectTextBox({ project, href }: ProjectProps) {
+function ProjectTextBox({ project }) {
   return (
     <div className="relative mt-2 flex w-full flex-col justify-between p-3 xl:mt-0">
       <div>
@@ -41,17 +43,6 @@ function ProjectTextBox({ project, href }: ProjectProps) {
             value={project.overview as PortableTextBlock[]}
           />
         </div>
-      </div>
-
-      <div>
-        <p className="mx-0 mt-0 font-sans font-normal leading-7 text-right text-zinc-500">
-          <Link
-            href={href}
-            className="w-10 h-px text-xs leading-5 text-black uppercase cursor-pointer hover:text-purple-400 focus:text-cyan-800 underline"
-          >
-            View details
-          </Link>
-        </p>
       </div>
     </div>
   )

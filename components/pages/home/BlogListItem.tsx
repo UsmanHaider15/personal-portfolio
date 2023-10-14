@@ -20,18 +20,20 @@ export function BlogListItem(props: BlogProps) {
     blog.mainImage && urlForImage(blog.mainImage)?.fit('crop').url()
 
   return (
-    <div className="cursor-pointer hover:shadow-lg p-2 hover:rounded-md">
-      <div className="relative" style={{ height: 200 }}>
-        {imageUrl && <Image alt={blog.title} src={imageUrl} fill={true} />}
+    <Link href={href} passHref>
+      <div className="cursor-pointer p-2 hover:rounded-md">
+        <div className="relative" style={{ height: 200 }}>
+          {imageUrl && <Image alt={blog.title} src={imageUrl} fill={true} />}
+        </div>
+        <div className="flex">
+          <BlogTextBox blog={blog} />
+        </div>
       </div>
-      <div className="flex">
-        <BlogTextBox blog={blog} href={href} />
-      </div>
-    </div>
+    </Link>
   )
 }
 
-function BlogTextBox({ blog, href }: BlogProps) {
+function BlogTextBox({ blog }) {
   return (
     <div className="relative mt-2 flex w-full flex-col justify-between p-3 xl:mt-0">
       <div>
@@ -44,24 +46,6 @@ function BlogTextBox({ blog, href }: BlogProps) {
             value={blog.overview as PortableTextBlock[]}
           />
         </div>
-      </div>
-      <div>
-        <p className="mx-0 mt-0 font-sans font-normal leading-7 text-right text-zinc-500">
-          <Link
-            href={href}
-            className="w-10 h-px text-xs leading-5 text-black uppercase cursor-pointer hover:text-purple-400 focus:text-cyan-800"
-          >
-            View details
-          </Link>
-        </p>
-      </div>
-      {/* Tags */}
-      <div className="mt-4 flex flex-row gap-x-2">
-        {/* {blog.tags?.map((tag, key) => (
-          <div className="text-sm font-medium lowercase md:text-lg" key={key}>
-            #{tag}
-          </div>
-        ))} */}
       </div>
     </div>
   )

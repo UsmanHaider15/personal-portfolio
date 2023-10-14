@@ -73,34 +73,6 @@ export default defineType({
       ],
       validation: (rule) => rule.max(155).required(),
     }),
-    // add fields for social links
-    defineField({
-      name: 'socialLinks',
-      description: 'These are the links to your social media profiles.',
-      title: 'Social links',
-      type: 'array',
-      of: [
-        defineArrayMember({
-          type: 'object',
-          fields: [
-            defineField({
-              name: 'key',
-              description: 'This field is the key of the social link.',
-              title: 'Key',
-              type: 'string',
-              validation: (rule) => rule.required(),
-            }),
-            defineField({
-              name: 'url',
-              description: 'This field is the url of the social link.',
-              title: 'Url',
-              type: 'url',
-              validation: (rule) => rule.required(),
-            }),
-          ],
-        }),
-      ],
-    }),
     // add field for contact me button which have a title and a url
     defineField({
       name: 'contactMeButton',

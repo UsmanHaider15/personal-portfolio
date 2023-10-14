@@ -8,6 +8,7 @@ import FooterPreview from './FooterPreview'
 
 export async function Footer() {
   const data = await getSettings()
+  console.log(data.socialMediaLinks)
 
   return (
     <LiveQuery

@@ -108,8 +108,14 @@ export interface BlogPayload {
   body?: PortableTextBlock[]
 }
 
+export interface SocialMediaLink {
+  name: string
+  url: string
+}
+
 export interface SettingsPayload {
   footer?: PortableTextBlock[]
   menuItems?: MenuItem[]
   ogImage?: Image
+  socialMediaLinks?: SocialMediaLink[]
 }

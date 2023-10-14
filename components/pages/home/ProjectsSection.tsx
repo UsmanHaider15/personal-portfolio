@@ -19,7 +19,7 @@ const ProjectsSection = ({ showcaseProjects }: ProjectsSectionProps) => {
           Portfolio
         </span>
         <h2 className=" mx-0 mb-6 mt-0 font-serif text-4xl font-normal leading-normal text-black">
-          Done Projects
+          Projects Delivered
         </h2>
       </div>
 

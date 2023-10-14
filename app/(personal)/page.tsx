@@ -23,7 +23,6 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function IndexRoute() {
   const data = await getHomePage()
-  console.log('data', data?.testimonials)
 
   if (!data && !draftMode().isEnabled) {
     return (

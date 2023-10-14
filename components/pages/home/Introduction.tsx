@@ -15,7 +15,6 @@ interface IntroductionProps {
   avatar: any
   tagLine: string
   overview: PortableTextBlock[]
-  socialLinks: SocialLinks[]
   contactMeButton: ContactMeButton | null
 }
 
@@ -24,7 +23,6 @@ const Introduction = ({
   avatar,
   tagLine,
   overview,
-  socialLinks,
   contactMeButton,
 }: IntroductionProps) => {
   const imageUrl =
@@ -60,44 +58,6 @@ const Introduction = ({
 
           <div className="mx-0 mt-0 mb-4 font-sans font-normal text-zinc-500">
             <CustomPortableText value={overview as PortableTextBlock[]} />
-          </div>
-
-          <div className="flex item-center mx-0 mt-0 mb-4 font-sans font-normal leading-7 text-zinc-500">
-            {socialLinks.map((link) => {
-              let Icon
-              if (link.key === 'facebook') {
-                Icon = AiFillFacebook
-              } else if (link.key === 'twitter') {
-                Icon = AiFillTwitterSquare
-              } else if (link.key === 'linkedin') {
-                Icon = AiFillLinkedin
-              } else if (link.key === 'github') {
-                Icon = AiFillGithub
-              } else {
-                return null
-              }
-              return (
-                <a
-                  href={link.url} // assuming link.url is the URL you want to navigate to
-                  className="text-black-400 bg-transparent cursor-pointer hover:text-black-400 focus:text-cyan-800"
-                  style={{
-                    textDecoration: 'none',
-                    transition: 'all 0.5s ease 0s',
-                  }}
-                >
-                  <Icon
-                    size={24}
-                    className="text-2xl not-italic leading-none normal-case"
-                    style={{
-                      speak: 'none',
-                      fontWeight: 'normal',
-                      fontVariant: 'normal',
-                      fontFamily: 'icomoon',
-                    }}
-                  />
-                </a>
-              )
-            })}
           </div>
 
           <p className="mx-0 mt-0 mb-4 font-sans font-normal text-zinc-500">

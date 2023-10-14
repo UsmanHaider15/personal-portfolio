@@ -61,7 +61,7 @@ export function HomePage({ data }: HomePageProps) {
             Testimonies
           </span>
           <h2 className="relative mx-0 mb-6 mt-0 font-serif text-4xl font-normal leading-normal text-black">
-            Clients Says
+            What The Clients Say
           </h2>
         </div>
         <TestimonialCarousel testimonials={testimonials} />

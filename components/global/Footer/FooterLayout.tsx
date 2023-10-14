@@ -14,6 +14,12 @@ export default function Footer(props: FooterProps) {
   const { data } = props
   const footer = data?.footer || ([] as PortableTextBlock[])
 
+  const ICON_MAP = {
+    twitter: <RiTwitterXFill size={24} />,
+    linkedin: <CiLinkedin size={24} />,
+    github: <LuGithub size={24} />,
+  }
+
   return (
     <div id="footer" className="block w-full md:p-32 text-sm">
       <div className="mx-auto px-4 lg:grid lg:grid-cols-2 text-center lg:text-left">
@@ -34,10 +40,20 @@ export default function Footer(props: FooterProps) {
             </a>
           </p>
           <p className="m-0 font-sans font-normal flex gap-2 text-purple-400 justify-center lg:justify-start">
-            <FiFacebook size={24} />
-            <RiTwitterXFill size={24} />
-            <CiLinkedin size={24} />
-            <LuGithub size={24} />
+            {data.socialMediaLinks.map((link) => {
+              const IconComponent = ICON_MAP[link.name]
+              if (!IconComponent) return null // Skip if the platform is not in the map
+              return (
+                <a
+                  key={link.name}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {IconComponent}
+                </a>
+              )
+            })}
           </p>
         </div>
 

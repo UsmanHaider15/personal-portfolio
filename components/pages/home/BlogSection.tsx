@@ -25,7 +25,7 @@ const BlogSection = ({ blogPosts }: BlogSectionProps) => {
           Blog
         </span>
         <h2 className=" mx-0 mt-0 font-serif text-4xl font-normal leading-normal text-black">
-          Read Our Case
+          My Thoughts
         </h2>
       </div>
       <div className="mx-auto">
