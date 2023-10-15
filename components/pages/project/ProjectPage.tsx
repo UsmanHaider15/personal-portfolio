@@ -98,7 +98,7 @@ export function ProjectPage({ data }: ProjectPageProps) {
         {overview && (
           <div>
             <CustomPortableText
-              paragraphClasses="m-0 mb-4 lg:text-lg sm:text-md font-serif text-gray-700"
+              paragraphClasses="m-0 mb-4 lg:text-lg sm:text-md text-gray-700"
               value={overview}
             />
           </div>
@@ -107,7 +107,7 @@ export function ProjectPage({ data }: ProjectPageProps) {
         {/* Description */}
         {description && (
           <CustomPortableText
-            paragraphClasses="font-serif text-neutral-800 lg:text-lg lg:leading-8 sm:text-md sm:leading-7"
+            paragraphClasses="text-neutral-800 lg:text-lg lg:leading-8 sm:text-md sm:leading-7"
             value={description}
           />
         )}

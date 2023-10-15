@@ -54,7 +54,7 @@ export function BlogPage({ data }: BlogPageProps) {
         {/* Body */}
         {body && (
           <CustomPortableText
-            paragraphClasses="font-serif text-neutral-800 lg:text-lg lg:leading-8 sm:text-md sm:leading-7"
+            paragraphClasses="text-neutral-800 lg:text-lg lg:leading-8 sm:text-md sm:leading-7"
             value={body}
           />
         )}

@@ -55,12 +55,12 @@ export function HomePage({ data }: HomePageProps) {
       <div>
         <div className="px-4 text-center leading-7">
           <span
-            className="mb-2 block font-sans text-xs font-semibold uppercase text-gray-600"
+            className="mb-2 block text-xs font-semibold uppercase text-gray-600"
             style={{ letterSpacing: '3px' }}
           >
             Testimonies
           </span>
-          <h2 className="relative mx-0 mb-6 mt-0 font-serif text-4xl font-normal leading-normal text-black">
+          <h2 className="relative mx-0 mb-6 mt-0 text-4xl font-normal leading-normal text-black">
             What The Clients Say
           </h2>
         </div>

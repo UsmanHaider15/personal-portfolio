@@ -40,7 +40,7 @@ function BlogTextBox({ blog }) {
         <div className="mb-2 text-lg font-extrabold tracking-tight md:text-xl text-left">
           {blog.title}
         </div>
-        <div className="font-serif text-left">
+        <div className="text-left">
           <CustomPortableText
             paragraphClasses={`text-sm text-gray-800`}
             value={blog.overview as PortableTextBlock[]}

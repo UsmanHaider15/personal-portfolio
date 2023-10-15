@@ -19,12 +19,12 @@ const BlogSection = ({ blogPosts }: BlogSectionProps) => {
       {' '}
       <div className="mb-12 text-center">
         <span
-          className="mb-2 block font-sans text-xs font-semibold uppercase text-gray-600"
+          className="mb-2 block text-xs font-semibold uppercase text-gray-600"
           style={{ letterSpacing: 3 }}
         >
           Blog
         </span>
-        <h2 className=" mx-0 mt-0 font-serif text-4xl font-normal leading-normal text-black">
+        <h2 className="mx-0 mt-0 text-4xl font-normal leading-normal text-black">
           My Thoughts
         </h2>
       </div>

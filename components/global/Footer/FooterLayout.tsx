@@ -25,13 +25,13 @@ export default function Footer(props: FooterProps) {
       <div className="mx-auto px-4 lg:grid lg:grid-cols-2 text-center lg:text-left">
         {/* Let's Talk Section */}
         <div className="md:grid-span-1 mb-20 lg:mb-0">
-          <h2 className="mt-0 mb-4 font-serif text-3xl font-light tracking-wider text-black">
+          <h2 className="mt-0 mb-4 text-3xl font-light tracking-wider text-black">
             Let's Talk
           </h2>
-          {/* <p className="mb-6 mt-0 font-sans font-normal">
+          {/* <p className="mb-6 mt-0 font-normal">
             A small river named Duden flows by their place and supplies.
           </p> */}
-          <p className="mb-6 mt-0 font-sans font-normal">
+          <p className="mb-6 mt-0 font-normal">
             <a
               href="#"
               className="cursor-pointer bg-transparent text-purple-400 hover:text-purple-400 focus:text-cyan-800"
@@ -39,7 +39,7 @@ export default function Footer(props: FooterProps) {
               usman.haider.developer@gmail.com
             </a>
           </p>
-          <p className="m-0 font-sans font-normal flex gap-2 text-purple-400 justify-center lg:justify-start">
+          <p className="m-0 font-normal flex gap-2 text-purple-400 justify-center lg:justify-start">
             {data.socialMediaLinks.map((link) => {
               const IconComponent = ICON_MAP[link.name]
               if (!IconComponent) return null // Skip if the platform is not in the map
@@ -59,10 +59,10 @@ export default function Footer(props: FooterProps) {
 
         {/* Newsletter Section */}
         <div className="md:grid-span-1">
-          <h2 className="mt-0 mb-4 font-serif text-3xl font-light tracking-wider text-black">
+          <h2 className="mt-0 mb-4  text-3xl font-light tracking-wider text-black">
             Newsletter
           </h2>
-          {/* <p className="mb-6 mt-0 font-sans font-normal">
+          {/* <p className="mb-6 mt-0 font-normal">
             A small river named Duden flows by their place and supplies it with
             the necessary regelialia.
           </p> */}
@@ -82,7 +82,7 @@ export default function Footer(props: FooterProps) {
           </div>
         </div>
       </div>
-      <p className="m-0 mb-4 text-center font-sans font-normal leading-7 text-zinc-500">
+      <p className="m-0 mb-4 text-center font-normal leading-7 text-zinc-500">
         © Copyright 2023 All rights reserved Usman Haider
       </p>
     </div>

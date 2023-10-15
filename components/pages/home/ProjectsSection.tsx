@@ -13,12 +13,12 @@ const ProjectsSection = ({ showcaseProjects }: ProjectsSectionProps) => {
     <div>
       <div className="mb-12 px-4 text-center leading-7 text-zinc-500 ">
         <span
-          className="mb-2 block font-sans text-xs font-semibold uppercase text-gray-600"
+          className="mb-2 block text-xs font-semibold uppercase text-gray-600"
           style={{ letterSpacing: 3 }}
         >
           Portfolio
         </span>
-        <h2 className=" mx-0 mb-6 mt-0 font-serif text-4xl font-normal leading-normal text-black">
+        <h2 className="mx-0 mb-6 mt-0 text-4xl font-normal leading-normal text-black">
           Projects Delivered
         </h2>
       </div>

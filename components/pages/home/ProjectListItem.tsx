@@ -37,7 +37,7 @@ function ProjectTextBox({ project }) {
         <div className="mb-2 text-lg font-extrabold tracking-tight md:text-xl text-left">
           {project.title}
         </div>
-        <div className="font-serif text-left text-xs">
+        <div className="text-left text-xs">
           <CustomPortableText
             paragraphClasses={`text-sm text-gray-800`}
             value={project.overview as PortableTextBlock[]}
