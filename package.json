@@ -19,6 +19,7 @@
     "@sanity/demo": "1.0.2",
     "@sanity/image-url": "1.0.2",
     "@sanity/vision": "3.16.2",
+    "@sendgrid/mail": "^7.7.0",
     "@tailwindcss/typography": "0.5.9",
     "@vercel/og": "0.5.13",
     "classnames": "2.3.2",

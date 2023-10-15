@@ -117,5 +117,5 @@ export interface SettingsPayload {
   footer?: PortableTextBlock[]
   menuItems?: MenuItem[]
   ogImage?: Image
-  socialMediaLinks?: SocialMediaLink[]
+  socialMediaLinks: SocialMediaLink[]
 }
