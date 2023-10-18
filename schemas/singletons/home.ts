@@ -73,29 +73,6 @@ export default defineType({
       ],
       validation: (rule) => rule.max(155).required(),
     }),
-    // add field for contact me button which have a title and a url
-    defineField({
-      name: 'contactMeButton',
-      description: 'This is the contact me button.',
-      title: 'Contact me button',
-      type: 'object',
-      fields: [
-        defineField({
-          name: 'title',
-          description: 'This field is the title of the button.',
-          title: 'Title',
-          type: 'string',
-          validation: (rule) => rule.required(),
-        }),
-        defineField({
-          name: 'email',
-          description: 'This field is the email of the button.',
-          title: 'Email',
-          type: 'string',
-          validation: (rule) => rule.required(),
-        }),
-      ],
-    }),
     defineField({
       name: 'services',
       title: 'Here Are Some of My Skills',

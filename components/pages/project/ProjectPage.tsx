@@ -31,7 +31,7 @@ export function ProjectPage({ data }: ProjectPageProps) {
   return (
     <div className="md:mx-auto md:w-7/12">
       <div className="mb-20">
-        <h1 className="font-bold text-2xl md:text-5xl mb-4">{title}</h1>
+        <h1 className="font-medium text-2xl md:text-4xl mb-4">{title}</h1>
 
         <ul className="mb-4 grid grid-cols-2 gap-4 text-black">
           <li className="">

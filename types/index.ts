@@ -13,11 +13,6 @@ export interface SocialLinks {
   _key: string
 }
 
-export interface ContactMeButton {
-  email: string
-  title: string
-}
-
 export interface MilestoneItem {
   description?: string
   duration?: {
@@ -69,7 +64,6 @@ export interface HomePagePayload {
   avatar?: Image
   tagLine?: string
   socialLinks?: SocialLinks[]
-  contactMeButton?: ContactMeButton
   services?: Service[]
   testimonials?: Testimonial[]
 }

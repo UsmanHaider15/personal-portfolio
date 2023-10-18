@@ -20,7 +20,6 @@ export function HomePage({ data }: HomePageProps) {
     avatar = null,
     tagLine = '',
     socialLinks = [],
-    contactMeButton = null,
     services = [],
     testimonials = [],
   } = data ?? {}
@@ -33,7 +32,6 @@ export function HomePage({ data }: HomePageProps) {
         tagLine={tagLine}
         overview={overview}
         socialLinks={socialLinks}
-        contactMeButton={contactMeButton}
       />
       <div className="py-20"></div>
       <ServicesSection services={services} />
@@ -60,7 +58,7 @@ export function HomePage({ data }: HomePageProps) {
           >
             Testimonies
           </span>
-          <h2 className="relative mx-0 mb-6 mt-0 text-4xl font-normal leading-normal text-black">
+          <h2 className="relative mx-0 md:mb-4 mt-0 text-4xl font-normal leading-normal text-black">
             What The Clients Say
           </h2>
         </div>

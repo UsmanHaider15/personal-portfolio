@@ -2,20 +2,13 @@ import type { PortableTextBlock } from '@portabletext/types'
 import { CustomPortableText } from 'components/shared/CustomPortableText'
 import { urlForImage } from 'lib/sanity.image'
 import Image from 'next/image'
-import { ContactMeButton, SocialLinks } from 'types'
-import {
-  AiFillFacebook,
-  AiFillTwitterSquare,
-  AiFillLinkedin,
-  AiFillGithub,
-} from 'react-icons/ai'
+import Link from 'next/link'
 
 interface IntroductionProps {
   name: string
   avatar: any
   tagLine: string
   overview: PortableTextBlock[]
-  contactMeButton: ContactMeButton | null
 }
 
 const Introduction = ({
@@ -23,7 +16,6 @@ const Introduction = ({
   avatar,
   tagLine,
   overview,
-  contactMeButton,
 }: IntroductionProps) => {
   const imageUrl =
     avatar && urlForImage(avatar)?.height(972).width(800).fit('crop').url()
@@ -61,12 +53,12 @@ const Introduction = ({
           </div>
 
           <p className="mx-0 mt-0 mb-4 font-normal text-zinc-500">
-            <a
+            <Link
               className="inline-block py-2 px-5 border rounded-none text-base font-normal text-center uppercase tracking-wider cursor-pointer text-neutral-600 border-zinc-300 hover:border-purple-300 hover:bg-purple-400 hover:text-white focus:border-purple-300 focus:bg-purple-400 focus:text-white transition-all duration-300 ease-in-out"
-              href={`mailto:${contactMeButton?.email}`}
+              href="#contact_section"
             >
-              {contactMeButton?.title}
-            </a>
+              Message Me
+            </Link>
           </p>
         </div>
       </div>

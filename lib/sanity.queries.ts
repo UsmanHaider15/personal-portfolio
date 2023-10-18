@@ -29,7 +29,6 @@ export const homePageQuery = groq`
     name,
     avatar,
     tagLine,
-    contactMeButton,
     services,
     }
 `

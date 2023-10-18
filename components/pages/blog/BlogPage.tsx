@@ -29,6 +29,34 @@ export function BlogPage({ data }: BlogPageProps) {
 
   return (
     <div className="md:mx-auto md:w-7/12">
+      <Link className="flex cursor-pointer leading-6 text-black" href="/">
+        <span
+          style={{ transform: 'translateX(0) translateZ(0px)' }}
+          className="text-blakc"
+        >
+          <svg
+            className="block align-middle"
+            width={32}
+            height={32}
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style={{ transform: 'matrix(0, 1, -1, 0, 0, 0)' }}
+          >
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M15.101 5.5V23.1094L9.40108 17.4095L8.14807 18.6619L15.9862 26.5L23.852 18.6342L22.5996 17.3817L16.8725 23.1094V5.5H15.101Z"
+              fill="currentColor"
+              className="cursor-pointer"
+            />
+          </svg>
+        </span>
+        <span className="ml-4 mr-0 cursor-pointer text-lg font-medium leading-7">
+          Back to overview
+        </span>
+      </Link>
+
       <div className="mb-20">
         <h1 className="font-medium text-2xl md:text-4xl mb-2">{title}</h1>
 
