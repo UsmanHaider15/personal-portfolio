@@ -3,6 +3,8 @@ import type { PortableTextBlock } from '@portabletext/types'
 import ImageBox from 'components/shared/ImageBox'
 import { TimelineSection } from 'components/shared/TimelineSection'
 import { Image } from 'sanity'
+import SyntaxHighlighter from 'react-syntax-highlighter'
+import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 
 export function CustomPortableText({
   paragraphClasses,
@@ -105,6 +107,13 @@ export function CustomPortableText({
               <div className="text-sm text-gray-600">{value.caption}</div>
             )}
           </div>
+        )
+      },
+      code: ({ value }) => {
+        return (
+          <SyntaxHighlighter language={value.language} style={docco}>
+            {value.code}
+          </SyntaxHighlighter>
         )
       },
       timeline: ({ value }) => {

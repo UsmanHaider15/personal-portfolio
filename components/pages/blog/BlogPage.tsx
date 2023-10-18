@@ -20,6 +20,7 @@ export function BlogPage({ data }: BlogPageProps) {
     body,
     overview,
     slug,
+    estimatedReadingTime,
   } = data ?? {}
 
   const publishedDate = publishedAt
@@ -29,15 +30,15 @@ export function BlogPage({ data }: BlogPageProps) {
   return (
     <div className="md:mx-auto md:w-7/12">
       <div className="mb-20">
-        <h1 className="font-bold text-2xl md:text-5xl mb-4">{title}</h1>
+        <h1 className="font-medium text-2xl md:text-4xl mb-2">{title}</h1>
 
-        <div className="border-t border-b flex justify-between items-center mb-6">
+        <div className="flex justify-between items-center mb-4">
           {!!publishedDate && author && (
             <div className="text-sm md:text-md">
-              {author} - {publishedDate}
+              {formatDateToHumanReadable(publishedDate)} -{' '}
+              {estimatedReadingTime} min read
             </div>
           )}
-          <ShareIcons postSlug={slug} />
         </div>
 
         {/* <Header title={title} description={overview} /> */}
@@ -64,3 +65,26 @@ export function BlogPage({ data }: BlogPageProps) {
 }
 
 export default BlogPage
+
+function formatDateToHumanReadable(dateStr: string): string {
+  // Parse the date string into a Date object.
+  const date = new Date(dateStr)
+
+  // Check if the date is valid.
+  if (isNaN(date.getTime())) {
+    throw new Error('Invalid date format')
+  }
+
+  // Options for the date string format, without the 'weekday'.
+  const options: Intl.DateTimeFormatOptions = {
+    year: 'numeric', // "2024", etc.
+    month: 'long', // "December", "January", etc.
+    day: 'numeric', // "1", "2", etc.
+  }
+
+  // Locale can be any valid BCP 47 language tag, here we're using US English.
+  const locale = 'en-US'
+
+  // Use the Intl.DateTimeFormat object to format the date.
+  return new Intl.DateTimeFormat(locale, options).format(date)
+}

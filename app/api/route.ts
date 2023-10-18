@@ -12,7 +12,6 @@ type ResponseData = {
 export async function POST(request: Request) {
   let response: ResponseData = {}
   const body = await request.json()
-  console.log(body)
   const content = {
     to: 'leo14haider@gmail.com',
     from: 'usman.haider.developer@gmail.com',

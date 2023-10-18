@@ -73,7 +73,8 @@ export const blogBySlugQuery = groq`
     publishedAt,
     mainImage,
     categories,
-    body
+    body,
+    "estimatedReadingTime": round(length(pt::text(body)) / 5 / 180 )
   }
 `
 

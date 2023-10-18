@@ -106,6 +106,7 @@ export interface BlogPayload {
   mainImage?: Image
   categories?: string[]
   body?: PortableTextBlock[]
+  estimatedReadingTime?: number
 }
 
 export interface SocialMediaLink {

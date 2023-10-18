@@ -22,6 +22,7 @@ import timeline from 'schemas/objects/timeline'
 import home from 'schemas/singletons/home'
 import settings from 'schemas/singletons/settings'
 import testimonial from 'schemas/documents/testimonial'
+import { codeInput } from '@sanity/code-input'
 
 const title =
   process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE ||
@@ -76,6 +77,7 @@ export default defineConfig({
     ],
   },
   plugins: [
+    codeInput(),
     deskTool({
       structure: pageStructure([home, settings]),
       // `defaultDocumentNode` is responsible for adding a “Preview” tab to the document pane
